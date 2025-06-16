@@ -3,8 +3,7 @@ import SignUp from './sign-up/page'
 
 function page() {
   return (
-    <div>
-        
+    <div> 
         <SignUp />
     </div>
   )
