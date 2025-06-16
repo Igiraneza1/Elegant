@@ -1,12 +1,12 @@
 import React from 'react'
-import SignUp from './sign-up/page'
+import SignIn from '../app/signin/page'
 
 function page() {
   return (
     <div> 
-        <SignUp />
+        <SignIn />
     </div>
   )
 }
 
-export default page
+export default page;
