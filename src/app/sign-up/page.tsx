@@ -12,7 +12,13 @@ function SignUp() {
     <div className="grid items-center justify-center bg-gray-200 h-screen">
       <div className="bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6">
         <div className="flex items-center justify-center">
-          <Image src={chair} alt="Chair" width={500} height={400} className="rounded" />
+          <Image
+            src={chair}
+            alt="Chair"
+            width={500}
+            height={400}
+            className="rounded"
+          />
         </div>
 
         <div>
