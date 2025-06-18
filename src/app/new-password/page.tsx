@@ -3,10 +3,10 @@
 
 import React from "react";
 import Image from "next/image";
-import chair from "@/image/chair1.jpg"; // adjust path if needed
+import chair from "@/image/chair1.jpg"; 
 import Link from "next/link";
 
-export default function NewPasswordPage() {
+export default function NewPassword() {
   return (
     <div className="grid items-center justify-center bg-gray-200 h-screen">
       <div className="bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6 rounded-lg shadow-lg max-w-4xl">
@@ -21,7 +21,7 @@ export default function NewPasswordPage() {
           />
         </div>
 
-        {/* Right: Form */}
+        
         <div>
               <p className="text-sm text-gray-500 m-4">
               <Link href="/sign-in" className="gray-500 hover:underline">
