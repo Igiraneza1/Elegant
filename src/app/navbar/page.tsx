@@ -8,6 +8,7 @@ function Navbar() {
         <nav className="p-4 flex justify-between items-center">
             <div className="text-2xl font-bold"> 
                 <Link href="">Elegant</Link>
+                
             </div>
         </nav>
     </div>
