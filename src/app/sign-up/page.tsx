@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import chair from "../../image/chair1.jpg";
 import Link from "next/link";
 
 function SignUp() {
-  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="grid items-center justify-center bg-gray-200 h-screen">
@@ -61,17 +59,15 @@ function SignUp() {
               </label>
               <div className="relative">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type= "password"
                   id="password"
                   placeholder="Your password"
                   className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
                 />
                 <button
                   type="button"
-                  onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
                 >
-                  {showPassword ? "👁️" : "👁️"}
                 </button>
               </div>
             </div>

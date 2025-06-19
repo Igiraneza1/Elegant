@@ -1,5 +1,5 @@
 import React from 'react'
-import SignIn from './sign-in/page'
+import SignIn from './signin/page'
 
 function page() {
   return (

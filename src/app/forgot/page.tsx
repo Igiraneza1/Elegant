@@ -15,7 +15,7 @@ function ForgotPassword() {
     setError("");
 
     try {
-      const response = await fetch("", {
+      const response = await fetch(".........................", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
