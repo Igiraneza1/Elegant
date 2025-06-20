@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import chair from "../../image/chair1.jpg";
+import chair from "../../image/furniture/chair 6.jpg"; // Adjust the path as necessary 
 import Link from "next/link";
 
 function SignUp() {

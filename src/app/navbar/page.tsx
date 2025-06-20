@@ -9,7 +9,7 @@ function Navbar() {
             <div className="text-2xl font-bold"> 
                 <Link href="">Elegant</Link>
                 
-            </div>
+            </div>     
         </nav>
     </div>
   )
