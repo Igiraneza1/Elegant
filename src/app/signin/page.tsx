@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import chair from "../../image/furniture/chair 6.jpg";
+import chair from "../../../public/image/chair1.jpg"
+
 import Link from "next/link";
 
 export default function SignIn() {

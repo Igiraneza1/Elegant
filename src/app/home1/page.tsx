@@ -58,8 +58,6 @@ export default function Dashboard1() {
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
-
-      {/* Hero Section */}
       <div className="w-full h-96 bg-gray-400 mx-auto mt-12 relative">
         <div className="overflow-hidden rounded-xl shadow-md">
           <img
@@ -80,16 +78,16 @@ export default function Dashboard1() {
         <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow">→</button>
       </div>
 
-      {/* Branding */}
+      
       <div className="flex space-x-5 mt-8 px-4">
         <p className="text-3xl text-gray-800">Simply Unique/<br />Simply Better</p>
         <p className="text-sm text-gray-600">Elegant is a gift & decorations store based in Kigali, Rwanda. Est since 2019</p>
       </div>
 
-      {/* Section Cards */}
+      
       <section className="w-full mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* Living Room */}
+        
           <div className="md:col-span-2 bg-gray-100 flex items-center justify-between p-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
             <div>
               <h3 className="text-xl font-semibold mb-2 text-gray-800">Living Room</h3>
@@ -98,7 +96,7 @@ export default function Dashboard1() {
             <img src={chair[current % chair.length].image} alt="Chair" className="w-full h-92 md:h-64 object-contain" />
           </div>
 
-          {/* Bedroom and Kitchen */}
+      
           <div className="flex flex-col gap-6">
             <div className="bg-gray-100 flex items-center justify-between p-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
               <div>
@@ -119,7 +117,7 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      {/* New Arrivals */}
+      
       <section className="px-4 py-12 bg-white">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">New Arrivals</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -137,7 +135,7 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      {/* Promo Banner */}
+      
       <section className="bg-gray-100 px-4 py-10 mt-12 rounded-lg mx-4 flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2">
           <img src="/image/furniture/sofa5.jpg"  alt="sofa5" className="rounded-lg h-64 w-full" />
@@ -149,7 +147,7 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      {/* Guarantees */}
+      
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-8 text-center">
         <div>
           <h4 className="font-semibold text-gray-800">Free Shipping</h4>
@@ -165,7 +163,7 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      {/* Popular Picks */}
+    
       <section className="px-4 py-12">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Popular Picks</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -179,7 +177,7 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      {/* Newsletter */}
+    
       <div
         style={{ backgroundImage: "url('/image/furniture/chair2.jpg')" }}
         className="bg-cover bg-center p-10 text-center text-white mt-12"
