@@ -36,17 +36,19 @@ export default function Dashboard1() {
   ];
 
   const newArrivals = [
-    { image: '/image/furniture/sofa2.jpg', title: 'Modern Tan Sofa', price: '99K', rating: 5 },
-    { image: '/image/furniture/chair2.jpg', title: 'Retro Toaster', price: '79K', rating: 4 },
-    { image: '/image/furniture/room.jpg', title: 'Accent Chair', price: '289K', rating: 4 },
-    { image: '/image/furniture/kitchen2.jpg', title: 'Woven Basket', price: '450K', rating: 5 },
+    { image: '/image/furniture/sofa2.jpg', title: 'Modern Tan Sofa', price: '99K',  rating: 5, originalPrice: '200K', isNew: true, discount: '50%' },
+    { image: '/image/furniture/chair2.jpg', title: 'Retro Toaster', price: '79K', rating: 4, originalPrice: '160K', isNew: true, discount: '50%' },
+    { image: '/image/furniture/room.jpg', title: 'Accent Chair', price: '289K', rating: 4, originalPrice: '500K', isNew: true, discount: '50%' },
+    { image: '/image/furniture/kitchen2.jpg', title: 'Woven Basket', price: '450K', rating: 5,originalPrice: '200K',  isNew: true, discount: '50%' },
+    // { image: '/image/furniture/room4.jpg', title: 'Room Cupboard', price: '70K', rating: 4, originalPrice: '140K', isNew: true, discount: '50%' }
+
   ];
 
   const popular = [
     { image: '/image/furniture/sofa1.jpg', title: 'Mint Leather Sofa', description: 'Modern leather sofa with mint pillows.', price: '89k' },
     { image: '/image/furniture/sofa2.jpg', title: 'Elegant Fabric Sofa', description: 'Elegant fabric.', price: '74k' },
     { image: '/image/furniture/sofa4.jpg', title: 'Sectional Sofa', description: 'Comfortable and spacious sectional sofa.', price: '999k' },
-    { image: '/image/furniture/sofa3.jpg', title: 'Minimalist Sofa', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
+    { image: '/image/furniture/chair 4.jpg', title: 'Minimalist Sofa', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
   
   ];
 
@@ -64,7 +66,7 @@ export default function Dashboard1() {
             src={slides[current].image}
             alt={`Slide ${current + 1}`}
             onClick={() => setShowDescription(!showDescription)}
-            className="w-full h-96 object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+            className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
           />
         </div>
 
@@ -117,24 +119,30 @@ export default function Dashboard1() {
         </div>
       </section>
 
-      
+     
       <section className="px-4 py-12 bg-white">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">New Arrivals</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {newArrivals.map((item, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg hover:shadow-md transition duration-300">
-              <img src={item.image} alt={item.title} className="h-48 w-full object-cover rounded" />
-              <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+          {newArrivals.map((item) => (
+             <div className="relative">
+        <div className="absolute top-0 left-0 space-y-1 p-2">
+          <span className="block bg-black text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
+          <span className="block bg-green-500 text-white text-xs font-bold px-2 py-1 rounded hover:bg-gray-800">-50%</span>
+        </div>
+              <img src={item.image} alt={item.title} className="h-48 w-full object-cover rounded" 
+              />
+                
+              
+              <h3 className="mt-2 text-lg font-semibold text-gray-800">{item.title}</h3>
               <div className="text-yellow-500">
                 {'★'.repeat(item.rating)}{'☆'.repeat(5 - item.rating)}
               </div>
               <p className="text-gray-700 mt-1">{item.price}</p>
-              <button className="mt-2 text-sm bg-black text-white px-3 py-1 rounded hover:bg-gray-800">Add to Cart</button>
+              <button className="mt-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-gray-800">Add to Cart</button>
             </div>
           ))}
         </div>
       </section>
-
       
       <section className="bg-gray-100 px-4 py-10 mt-12 rounded-lg mx-4 flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2">
@@ -143,12 +151,12 @@ export default function Dashboard1() {
         <div className="w-full md:w-1/2 bg-gray-200 p-6  h-64 rounded-lg">
           <h3 className="text-2xl font-bold mb-2 text-gray-800">HUNDREDS of New Lower Prices!</h3>
           <p className="text-gray-600">Discover new markdowns on furniture, décor, and more—updated every week.</p>
-          <a href="#" className="mt-4 inline-block bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">Shop Now</a>
+          <a href="#" className="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-gray-800 transition">Shop Now</a>
         </div>
       </section>
 
       
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-8 text-center">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-8 text-center bg-gray-200">
         <div>
           <h4 className="font-semibold text-gray-800">Free Shipping</h4>
           <p className="text-sm text-gray-600">On orders over $100</p>
@@ -186,9 +194,10 @@ export default function Dashboard1() {
         <p>Sign up for deals, new products and promotions</p>
         <div className="flex justify-center space-x-4 mt-4">
           <input type="email" placeholder="Email address" className="p-2 rounded text-black" />
-          <a href="/sign-up" className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">Sign Up</a>
+          <a href="/sign-up" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-gray-800">Sign Up</a>
         </div>
       </div>
+      
 
     </main>
   );
