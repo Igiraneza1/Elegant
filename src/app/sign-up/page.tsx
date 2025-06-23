@@ -56,6 +56,13 @@ function SignUp() {
               <label htmlFor="name" className="block text-gray-700 mb-2">
                 Full Name
               </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your full name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"/>
               <label htmlFor="username" className="block text-gray-700 mb-2">
                 Username
               </label>
