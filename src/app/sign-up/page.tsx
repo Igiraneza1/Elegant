@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/image"
 import chair from "../../../public/image/chair1.jpg"
 import Link from "next/link";
 
