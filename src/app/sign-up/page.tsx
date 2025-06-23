@@ -1,10 +1,33 @@
 "use client";
 
-import Image from "next/image"
-import chair from "../../../public/image/chair1.jpg"
+import Image from "next/image";
+import chair from "../../../public/image/chair1.jpg";
 import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 
 function SignUp() {
+  const [formData, setFormData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("https://elegant-be.onrender.com/api/users/register", formData);
+      console.log("Success:", response.data);
+      
+    } catch (error) {
+      console.error("Signup failed:", error);
+    }
+  };
 
   return (
     <div className="grid items-center justify-center bg-gray-200 h-screen">
@@ -28,8 +51,11 @@ function SignUp() {
             </Link>
           </p>
 
-          <form className="mt-4">
+          <form className="mt-4" onSubmit={handleSubmit}>
             <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700 mb-2">
+                Full Name
+              </label>
               <label htmlFor="username" className="block text-gray-700 mb-2">
                 Username
               </label>
@@ -37,6 +63,8 @@ function SignUp() {
                 type="text"
                 id="username"
                 placeholder="Your username"
+                value={formData.username}
+                onChange={handleChange}
                 className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
@@ -49,6 +77,8 @@ function SignUp() {
                 type="email"
                 id="email"
                 placeholder="Your email address"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
@@ -59,16 +89,13 @@ function SignUp() {
               </label>
               <div className="relative">
                 <input
-                  type= "password"
+                  type="password"
                   id="password"
                   placeholder="Your password"
+                  value={formData.password}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
                 />
-                <button
-                  type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
-                >
-                </button>
               </div>
             </div>
 
