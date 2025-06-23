@@ -14,18 +14,60 @@ function SignUp() {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
     try {
-      const response = await axios.post("https://elegant-be.onrender.com/api/users/register", formData);
+      const response = await axios.post("https://elegant-be.onrender.com/api/users/register",formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log("Success:", response.data);
-      
-    } catch (error) {
-      console.error("Signup failed:", error);
+      setMessage("Registration successful! 🎉");
+    } catch (error: unknown) {
+      if (
+        typeof error === "object" &&
+        error !== null &&
+        "response" in error &&
+        typeof (error as { response?: unknown }).response === "object"
+      ) {
+        const err = error as { response: { data?: { message?: string } } };
+        console.error("Server error:", err.response.data);
+        setMessage(err.response.data?.message || "Registration failed.");
+      } else if (
+        typeof error === "object" &&
+        error !== null &&
+        "request" in error
+      ) {
+        const err = error as { request: unknown };
+        console.error("No response received:", err.request);
+        setMessage("No response from server.");
+      } else if (
+        typeof error === "object" &&
+        error !== null &&
+        "message" in error
+      ) {
+        const err = error as { message: string };
+        console.error("Axios error:", err.message);
+        setMessage("Unexpected error occurred.");
+      } else {
+        console.error("Unknown error:", error);
+        setMessage("Unexpected error occurred.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,7 +104,9 @@ function SignUp() {
                 placeholder="Your full name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"/>
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300 mb-4"
+              />
+
               <label htmlFor="username" className="block text-gray-700 mb-2">
                 Username
               </label>
@@ -72,7 +116,7 @@ function SignUp() {
                 placeholder="Your username"
                 value={formData.username}
                 onChange={handleChange}
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
 
@@ -86,7 +130,7 @@ function SignUp() {
                 placeholder="Your email address"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
 
@@ -101,17 +145,22 @@ function SignUp() {
                   placeholder="Your password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                  className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
                 />
               </div>
             </div>
 
             <button
               type="submit"
+              disabled={loading}
               className="w-full bg-black text-white py-2 px-4 rounded-md focus:outline-none hover:bg-gray-800 transition"
             >
-              Sign up
+              {loading ? "Signing up..." : "Sign up"}
             </button>
+
+            {message && (
+              <p className="mt-4 text-center text-sm text-red-500">{message}</p>
+            )}
           </form>
         </div>
       </div>
