@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import chair from "../../image/chair1.jpg";
+import chair from "../../../public/image/chair1.jpg"
 
 function ForgotPassword() {
   const [emailSent, setEmailSent] = useState(false);
