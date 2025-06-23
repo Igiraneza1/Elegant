@@ -6,7 +6,7 @@ export default function Dashboard1() {
     { image: '/image/furniture/sofa1.jpg', description: 'Modern leather sofa with mint pillows.', price: '89k' },
     { image: '/image/furniture/sofa2.jpg', description: 'Elegant fabric.', price: '74k' },
     { image: '/image/furniture/sofa4.jpg', description: 'Comfortable and spacious sectional sofa.', price: '999k' },
-    { image: '/image/furniture/sofa3.jpg', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
+    { image: '/image/furniture/sofa3.jpg', description: 'woven design, perfect for small spaces.', price: '599k' },
     { image: '/image/furniture/chair2.jpg', description: 'Elegant fabric couch with cozy feel.', price: '89k' },
     { image: '/image/furniture/sofa5.jpg', description: 'Retro Toaster sofa', price: '479k' },
   ];
@@ -29,17 +29,18 @@ export default function Dashboard1() {
   ];
 
   const kitchen = [
+    { image: '/image/furniture/kitchen.jpg' },
     { image: '/image/furniture/kitchen1.jpg' },
     { image: '/image/furniture/kitchen2.jpg' },
     { image: '/image/furniture/kitchen3.jpg' },
-    { image: '/image/furniture/kitchen.jpg' },
+  
   ];
 
   const newArrivals = [
     { image: '/image/furniture/sofa2.jpg', title: 'Modern Tan Sofa', price: '99K',  rating: 5, originalPrice: '200K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/chair2.jpg', title: 'Retro Toaster', price: '79K', rating: 4, originalPrice: '160K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/room.jpg', title: 'Accent Chair', price: '289K', rating: 4, originalPrice: '500K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/kitchen2.jpg', title: 'Woven Basket', price: '450K', rating: 5,originalPrice: '200K',  isNew: true, discount: '50%' },
+    { image: '/image/furniture/chair2.jpg', title: 'Retro chair', price: '79K', rating: 4, originalPrice: '160K', isNew: true, discount: '50%' },
+    { image: '/image/furniture/room.jpg', title: 'Accent room cupboard', price: '289K', rating: 4, originalPrice: '500K', isNew: true, discount: '50%' },
+    { image: '/image/furniture/kitchen2.jpg', title: 'Minimalist kitchen items', price: '450K', rating: 5,originalPrice: '200K',  isNew: true, discount: '50%' },
     // { image: '/image/furniture/room4.jpg', title: 'Room Cupboard', price: '70K', rating: 4, originalPrice: '140K', isNew: true, discount: '50%' }
 
   ];
@@ -48,7 +49,7 @@ export default function Dashboard1() {
     { image: '/image/furniture/sofa1.jpg', title: 'Mint Leather Sofa', description: 'Modern leather sofa with mint pillows.', price: '89k' },
     { image: '/image/furniture/sofa2.jpg', title: 'Elegant Fabric Sofa', description: 'Elegant fabric.', price: '74k' },
     { image: '/image/furniture/sofa4.jpg', title: 'Sectional Sofa', description: 'Comfortable and spacious sectional sofa.', price: '999k' },
-    { image: '/image/furniture/chair 4.jpg', title: 'Minimalist Sofa', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
+    { image: '/image/furniture/chair 4.jpg', title: 'Minimalist Chair', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
   
   ];
 
@@ -60,7 +61,7 @@ export default function Dashboard1() {
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
-      <div className="w-full h-96 bg-gray-400 mx-auto mt-12 relative">
+      <div className="w-full h-96 bg-gray-400 mx-auto relative">
         <div className="overflow-hidden rounded-xl shadow-md">
           <img
             src={slides[current].image}
@@ -124,7 +125,7 @@ export default function Dashboard1() {
         <h2 className="text-2xl font-bold mb-6 text-gray-800">New Arrivals</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {newArrivals.map((item) => (
-             <div className="relative">
+             <div className="relative animate-fade-in">
         <div className="absolute top-0 left-0 space-y-1 p-2">
           <span className="block bg-black text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
           <span className="block bg-green-500 text-white text-xs font-bold px-2 py-1 rounded hover:bg-gray-800">-50%</span>
@@ -173,7 +174,7 @@ export default function Dashboard1() {
 
     
       <section className="px-4 py-12">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Popular Picks</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Popular</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {popular.map((item, idx) => (
             <div key={idx} className="bg-white p-4 rounded shadow hover:shadow-md transition">
