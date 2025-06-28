@@ -1,10 +1,75 @@
 "use client";
 
-import Image from "next/image"
-import chair from "../../../public/image/chair1.jpg"
+import Image from "next/image";
+import chair from "../../../public/image/chair1.jpg";
 import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 
 function SignUp() {
+  const [formData, setFormData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await axios.post("https://elegant-be.onrender.com/api/users/register",formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Success:", response.data);
+      setMessage("Registration successful! 🎉");
+    } catch (error: unknown) {
+      if (
+        typeof error === "object" &&
+        error !== null &&
+        "response" in error &&
+        typeof (error as { response?: unknown }).response === "object"
+      ) {
+        const err = error as { response: { data?: { message?: string } } };
+        console.error("Server error:", err.response.data);
+        setMessage(err.response.data?.message || "Registration failed.");
+      } else if (
+        typeof error === "object" &&
+        error !== null &&
+        "request" in error
+      ) {
+        const err = error as { request: unknown };
+        console.error("No response received:", err.request);
+        setMessage("No response from server.");
+      } else if (
+        typeof error === "object" &&
+        error !== null &&
+        "message" in error
+      ) {
+        const err = error as { message: string };
+        console.error("Axios error:", err.message);
+        setMessage("Unexpected error occurred.");
+      } else {
+        console.error("Unknown error:", error);
+        setMessage("Unexpected error occurred.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="grid items-center justify-center bg-gray-200 h-screen">
@@ -28,8 +93,20 @@ function SignUp() {
             </Link>
           </p>
 
-          <form className="mt-4">
+          <form className="mt-4" onSubmit={handleSubmit}>
             <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700 mb-2">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your full name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300 mb-4"
+              />
+
               <label htmlFor="username" className="block text-gray-700 mb-2">
                 Username
               </label>
@@ -37,7 +114,9 @@ function SignUp() {
                 type="text"
                 id="username"
                 placeholder="Your username"
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                value={formData.username}
+                onChange={handleChange}
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
 
@@ -49,7 +128,9 @@ function SignUp() {
                 type="email"
                 id="email"
                 placeholder="Your email address"
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
               />
             </div>
 
@@ -59,25 +140,27 @@ function SignUp() {
               </label>
               <div className="relative">
                 <input
-                  type= "password"
+                  type="password"
                   id="password"
                   placeholder="Your password"
-                  className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 rounded outline-none focus:outline-none border border-gray-300"
                 />
-                <button
-                  type="button"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
-                >
-                </button>
               </div>
             </div>
 
             <button
               type="submit"
+              disabled={loading}
               className="w-full bg-black text-white py-2 px-4 rounded-md focus:outline-none hover:bg-gray-800 transition"
             >
-              Sign up
+              {loading ? "Signing up..." : "Sign up"}
             </button>
+
+            {message && (
+              <p className="mt-4 text-center text-sm text-red-500">{message}</p>
+            )}
           </form>
         </div>
       </div>

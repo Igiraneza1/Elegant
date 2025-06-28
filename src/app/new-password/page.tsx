@@ -23,7 +23,7 @@ export default function NewPassword() {
         
         <div>
               <p className="text-sm text-gray-500 m-4">
-              <Link href="/sign-in" className="gray-500 hover:underline">
+              <Link href="/signin" className="gray-500 hover:underline">
                 ← Back to Sign In
               </Link>
             </p>
