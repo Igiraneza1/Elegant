@@ -1,5 +1,8 @@
+//app/footer/page.tsx
 import React from 'react';
 import Link from 'next/link';
+import Dashboard1 from '../home1/page'; 
+import signin from '../signin/page';
 
 export default function Footer() {
     return (
