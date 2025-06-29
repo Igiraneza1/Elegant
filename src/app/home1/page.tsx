@@ -132,7 +132,7 @@ export default function Dashboard1() {
             />
 
 
-          {/* ADD TO CART (only for first item) */}
+          
           {index === 0 && (
             <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 rounded-lg text-sm font-medium z-10">
               Add to cart
@@ -140,18 +140,13 @@ export default function Dashboard1() {
           )}
         </div>
 
-        {/* RATING */}
         <div className="text-black text-sm mb-1">
           {'★'.repeat(item.rating)}
           {'☆'.repeat(5 - item.rating)}
         </div>
-
-        {/* TITLE */}
         <h3 className="text-gray-900 font-semibold text-sm mb-1">
           {item.title}
         </h3>
-
-        {/* PRICE */}
         <div className="flex items-center gap-2">
           <span className="text-gray-900 font-bold text-sm">{item.price}</span>
           {item.originalPrice && (
@@ -214,10 +209,13 @@ export default function Dashboard1() {
    <div className="w-full md:w-1/2">           
    <img src="/image/furniture/sofa3.jpg"  alt="sofa5" className=" h-86 w-full" />       
    </div>         
-   <div className="w-full md:w-1/2 bg-gray-200 p-20  h-86 flex flex-col justify-center items-center">           
-   <h3 className="text-2xl font-bold mb-2 text-gray-800">HUNDREDS of New Lower Prices!</h3>          
-    <p className="text-gray-600">Discover new markdowns on furniture, décor, and more—updated every week.</p>          
-     <a href="#" className="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-gray-800 transition">Shop Now</a>        
+   <div className="w-full md:w-1/2 bg-gray-200 p-20  h-86 flex flex-col justify-center items-center">
+   <p className='text-blue-400 text-2xl mr-60'>SALE UP TO 35% OFF</p>           
+   <h3 className="text-5xl font-bold mb-2 text-gray-800">HUNDREDS of New Lower Prices!</h3>          
+    <p className="text-gray-600 text-xl">Discover new markdowns on furniture,
+                                        décor, and more—updated every week.
+      </p>          
+     <a href="#" className="mt-4 inline-block text-gray-800  mr-135 transition">Shop Now  →</a>        
    </div>       
   </section> 
     
@@ -248,14 +246,13 @@ export default function Dashboard1() {
       </section>
 
 <div className="flex w-full h-96 items-center justify-center bg-gray-100">
-  {/* Left image */}
   <img
     src="image/furniture/bedroom.png"
     alt=""
     className="w-1/3 h-full object-cover "
   />
 
-  {/* Center content between images */}
+  
   <div className="w-1/3 h-full flex flex-col items-center justify-center text-center px-6">
     <h2 className="text-3xl font-semibold text-black mb-4">
       Join Our Newsletter
@@ -275,7 +272,6 @@ export default function Dashboard1() {
     </div>
   </div>
 
-  {/* Right image */}
   <img
     src="image/furniture/chair1.png"
     alt=""
@@ -283,9 +279,6 @@ export default function Dashboard1() {
   />
 </div>
 
-
-
-
-    </main>
+</main>
   );
 }
