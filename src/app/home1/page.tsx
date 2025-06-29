@@ -3,54 +3,33 @@ import React, { useState } from 'react';
 
 export default function Dashboard1() {
   const slides = [
-    { image: '/image/furniture/sofa1.jpg', description: 'Modern leather sofa with mint pillows.', price: '89k' },
-    { image: '/image/furniture/sofa2.jpg', description: 'Elegant fabric.', price: '74k' },
-    { image: '/image/furniture/sofa4.jpg', description: 'Comfortable and spacious sectional sofa.', price: '999k' },
-    { image: '/image/furniture/sofa3.jpg', description: 'woven design, perfect for small spaces.', price: '599k' },
-    { image: '/image/furniture/chair2.jpg', description: 'Elegant fabric couch with cozy feel.', price: '89k' },
-    { image: '/image/furniture/sofa5.jpg', description: 'Retro Toaster sofa', price: '479k' },
-  ];
-
-  const chair = [
-    { image: '/image/furniture/chair1.jpg' },
-    { image: '/image/furniture/chair2.jpg' },
-    { image: '/image/furniture/chair3.jpg' },
-    { image: '/image/furniture/chair4.jpg' },
-    { image: '/image/furniture/chair5.jpg' },
-  ];
-
-  const room = [
-    { image: '/image/furniture/room1.jpg' },
-    { image: '/image/furniture/room2.jpg' },
-    { image: '/image/furniture/room3.jpg' },
-    { image: '/image/furniture/room4.jpg' },
-    { image: '/image/furniture/room5.jpg' },
-    { image: '/image/furniture/room.jpg' },
-  ];
-
-  const kitchen = [
-    { image: '/image/furniture/kitchen.jpg' },
-    { image: '/image/furniture/kitchen1.jpg' },
-    { image: '/image/furniture/kitchen2.jpg' },
-    { image: '/image/furniture/kitchen3.jpg' },
-  
+    { image: '/image/furniture/sofa1.jpg', title: 'Modern Leather Sofa', description: 'Modern leather sofa with mint pillows.', price: '89k' },
+    {image: '/image/furniture/chair1.png', title: 'Elegant chair', description: 'Elegant chair with a modern design.', price: '89k' },
+    { image: '/image/furniture/livingroom.png', title: 'Mint Leather Sofa', price: '89k' },
+    { image: '/image/furniture/kitchen.jpg', title: 'Kitchen Fabric', price: '90k' },
+    { image: '/image/furniture/bedroom.png', title: 'Accent Room Cupboard', price: '289k' },
+    { image: '/image/furniture/Loveseat sofa.png', title: 'Love Seat Sofa', price: '200k' },
+    { image: '/image/furniture/Table lamp.png', title: 'Table Lamp', price: '160k' },
+    { image: '/image/furniture/Beige table lamp.png', title: 'Beige Table Lamp', price: '289k' },
+    { image: '/image/furniture/basket.png', title: 'Bamboo Basket', price: '200k' },
+    { image: '/image/furniture/Toasted.pgg', title: 'Toaster', price: '140k' },
+    { image: '/image/furniture/sofa2.jpg', title: 'Mint Leather Sofa', description: '7 ways to decorate your home', price: '89k' },
+    { image: '/image/furniture/kitchen.jpg', title: 'Elegant Kitchen Fabric', description: 'Kitchen organization', price: '74k' },
+    { image: '/image/furniture/bedroom1.jpg', title: 'Sectional Bedroom', description: 'Decor your bedroom', price: '99k' },
   ];
 
   const newArrivals = [
-    { image: '/image/furniture/sofa2.jpg', title: 'Modern Tan Sofa', price: '99K',  rating: 5, originalPrice: '200K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/chair2.jpg', title: 'Retro chair', price: '79K', rating: 4, originalPrice: '160K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/room.jpg', title: 'Accent room cupboard', price: '289K', rating: 4, originalPrice: '500K', isNew: true, discount: '50%' },
-    { image: '/image/furniture/kitchen2.jpg', title: 'Minimalist kitchen items', price: '450K', rating: 5,originalPrice: '200K',  isNew: true, discount: '50%' },
-    // { image: '/image/furniture/room4.jpg', title: 'Room Cupboard', price: '70K', rating: 4, originalPrice: '140K', isNew: true, discount: '50%' }
-
+    { image: '/image/furniture/Loveseat sofa.png', title: 'Loveseat', price: '$71.00', rating: 5, originalPrice: '$99.00', isNew: true, discount: '50%' },
+    { image: '/image/furniture/Table lamp.png', title: 'Table Lamp', price: '$24.00', rating: 4, originalPrice: '$48.00', isNew: true, discount: '50%' },
+    { image: '/image/furniture/Beige table lamp.png', title: 'Beige Table Lamp', price: '$30.00', rating: 4, originalPrice: '$60.00', isNew: true, discount: '50%' },
+    { image: '/image/furniture/basket.png', title: 'Bamboo Basket', price: '$12.00', rating: 5, originalPrice: '$24.00', isNew: true, discount: '50%' },
+    { image: '/image/furniture/Toasted.png', title: 'Toaster', price: '$35.00', rating: 4, originalPrice: '$70.00', isNew: true, discount: '50%' }
   ];
 
-  const popular = [
-    { image: '/image/furniture/sofa1.jpg', title: 'Mint Leather Sofa', description: 'Modern leather sofa with mint pillows.', price: '89k' },
-    { image: '/image/furniture/sofa2.jpg', title: 'Elegant Fabric Sofa', description: 'Elegant fabric.', price: '74k' },
-    { image: '/image/furniture/sofa4.jpg', title: 'Sectional Sofa', description: 'Comfortable and spacious sectional sofa.', price: '999k' },
-    { image: '/image/furniture/chair 4.jpg', title: 'Minimalist Chair', description: 'Minimalist design, perfect for small spaces.', price: '599k' },
-  
+  const article = [
+    { image: '/image/furniture/sofa2.jpg', title: '7 ways to decor your home', description: '', price: '' },
+    { image: '/image/furniture/kitchen.jpg', title: 'Kitchen organisation', description: '', price: '' },
+    { image: '/image/furniture/bedroom1.jpg', title: 'Decor your bedroom', description: '', price: '' },
   ];
 
   const [current, setCurrent] = useState(0);
@@ -60,145 +39,252 @@ export default function Dashboard1() {
   const nextSlide = () => setCurrent((current + 1) % slides.length);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
-      <div className="w-full h-96 bg-gray-400 mx-auto relative">
-        <div className="overflow-hidden rounded-xl shadow-md">
-          <img
-            src={slides[current].image}
-            alt={`Slide ${current + 1}`}
-            onClick={() => setShowDescription(!showDescription)}
-            className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
-          />
-        </div>
+    <main className="min-h-screen bg-white flex flex-col">
+                                                                       
+      <div className="w-full h-96 bg-gray-100 mx-auto relative mx-5">      
+          <div className="overflow-hidden rounded-xl shadow-md">         
+            <img src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
+          </div>          
+                      
+                  <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
+                  <button onClick={nextSlide} className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black">→</button>     
+          </div>               
+          <div className="flex justify-between space-x-96 mt-12 px-4 max-w-7xl mx-auto gap-20">        
+          <p className="text-6xl text-gray-800">Simply Unique/<br />Simply Better</p>      
+          <p className="text-sm text-gray-600 mt-10">Elegant is a gift & decorations store based in Kigali,<br/> Rwanda. Est since 2019</p>      
+          </div> 
+    
 
-        {showDescription && (
-          <p className="mt-4 text-center text-gray-700 text-lg transition-opacity duration-500">
-            {slides[current].description}
-          </p>
-        )}
+     <div className=" rounded-lg p-6 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow">←</button>
-        <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow">→</button>
+  <div className="rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg flex flex-col w-full h-[500px]">
+      <div className="p-6 bg-gray-100 rounded-t-lg text-left">
+      <h3 className="text-xl font-semibold mb-2 text-gray-800">Living Room</h3>
+      <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
+    </div>
+    <img
+      src={'image/furniture/livingroom.png'}
+      alt="livingroom"
+      className="w-full h-full object-cover rounded-t-lg"
+    />
+  
+  </div>
+
+  <div className="flex flex-col gap-6 w-full h-[600px]">
+  
+    <div className="bg-gray-100 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-between p-6 flex-1">
+      <div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-800">Bedroom</h3>
+        <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
       </div>
-
-      
-      <div className="flex space-x-5 mt-8 px-4">
-        <p className="text-3xl text-gray-800">Simply Unique/<br />Simply Better</p>
-        <p className="text-sm text-gray-600">Elegant is a gift & decorations store based in Kigali, Rwanda. Est since 2019</p>
-      </div>
-
-      
-      <section className="w-full mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        
-          <div className="md:col-span-2 bg-gray-100 flex items-center justify-between p-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-            <div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Living Room</h3>
-              <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
-            </div>
-            <img src={chair[current % chair.length].image} alt="Chair" className="w-full h-92 md:h-64 object-contain" />
-          </div>
-
-      
-          <div className="flex flex-col gap-6">
-            <div className="bg-gray-100 flex items-center justify-between p-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">Bedroom</h3>
-                <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
-              </div>
-              <img src={room[current % room.length].image} alt="Room" className="h-64 md:h-32 object-contain" />
-            </div>
-
-            <div className="bg-gray-100 flex items-center justify-between p-6 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">Kitchen</h3>
-                <a href="#" className="text-sm text-gray-600 hover:underline">Add to cart →</a>
-              </div>
-              <img src={kitchen[current % kitchen.length].image} alt="Kitchen" className="h-64 md:h-32 object-contain" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-     
-      <section className="px-4 py-12 bg-white">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">New Arrivals</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {newArrivals.map((item) => (
-             <div className="relative animate-fade-in">
-        <div className="absolute top-0 left-0 space-y-1 p-2">
-          <span className="block bg-black text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
-          <span className="block bg-green-500 text-white text-xs font-bold px-2 py-1 rounded hover:bg-gray-800">-50%</span>
-        </div>
-              <img src={item.image} alt={item.title} className="h-48 w-full object-cover rounded" 
-              />
-                
-              
-              <h3 className="mt-2 text-lg font-semibold text-gray-800">{item.title}</h3>
-              <div className="text-yellow-500">
-                {'★'.repeat(item.rating)}{'☆'.repeat(5 - item.rating)}
-              </div>
-              <p className="text-gray-700 mt-1">{item.price}</p>
-              <button className="mt-2 text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-gray-800">Add to Cart</button>
-            </div>
-          ))}
-        </div>
-      </section>
-      
-      <section className="bg-gray-100 px-4 py-10 mt-12 rounded-lg mx-4 flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2">
-          <img src="/image/furniture/sofa5.jpg"  alt="sofa5" className="rounded-lg h-64 w-full" />
-        </div>
-        <div className="w-full md:w-1/2 bg-gray-200 p-6  h-64 rounded-lg">
-          <h3 className="text-2xl font-bold mb-2 text-gray-800">HUNDREDS of New Lower Prices!</h3>
-          <p className="text-gray-600">Discover new markdowns on furniture, décor, and more—updated every week.</p>
-          <a href="#" className="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-gray-800 transition">Shop Now</a>
-        </div>
-      </section>
-
-      
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-8 text-center bg-gray-200">
-        <div>
-          <h4 className="font-semibold text-gray-800">Free Shipping</h4>
-          <p className="text-sm text-gray-600">On orders over $100</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-gray-800">Money-back Guarantee</h4>
-          <p className="text-sm text-gray-600">30 days refund policy</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-gray-800">24/7 Support</h4>
-          <p className="text-sm text-gray-600">We’re here to help</p>
-        </div>
-      </section>
+      <img
+        src={'image/furniture/bedroom.png'}
+        alt="bedroom"
+        className="h-full w-64 object-cover"
+      />
+    </div>
 
     
-      <section className="px-4 py-12">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Popular</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {popular.map((item, idx) => (
-            <div key={idx} className="bg-white p-4 rounded shadow hover:shadow-md transition">
-              <img src={item.image} alt={item.title} className="w-full h-40 object-cover rounded mb-2" />
-              <h4 className="font-semibold text-gray-800">{item.title}</h4>
-              <p className="text-sm text-gray-600">{item.price}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+    <div className="bg-gray-100 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-between p-6 flex-1">
+      <div>
+        <h3 className="text-xl font-semibold mb-2 text-gray-800">Kitchen</h3>
+        <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
+      </div>
+      <img
+        src={'image/furniture/toasted.png'}
+        alt="kitchen"
+        className="h-full w-64 object-cover"
+      />
+    </div>
+  </div>
+</div>
 
-    
+<section className="w-full ml-50 px-4 md:px-8 py-20 ">
+  <div className="flex justify-between items-center mb-12 px-2">
+    <h2 className="text-4xl font-medium text-gray-900">New Arrivals</h2>
+    <a
+      href="#"
+      className="text-gray-600 hover:text-gray-900 flex items-center text-sm font-medium gap-1 transition-colors"
+    >
+      More Products <span className="ml-1">→</span>
+    </a>
+  </div>
+
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    {newArrivals.map((item, index) => (
+      <div key={index} className="group cursor-pointer">
+        <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
+          {/* BADGES over image */}
+          {item.isNew && (
+            <div className="absolute top-3 left-3 z-10 space-y-2 bg-gray-100 ">
+              <span className="block bg-white text-black text-[10px] font-semibold px-2 py-0.5 rounded shadow-sm">
+                NEW
+              </span>
+              <span className="block bg-green-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded">
+                -{item.discount}
+              </span>
+            </div>
+          )}
+            <img
+             src={item.image}
+             alt={item.title}
+             className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+
+
+          {/* ADD TO CART (only for first item) */}
+          {index === 0 && (
+            <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 rounded-lg text-sm font-medium z-10">
+              Add to cart
+            </button>
+          )}
+        </div>
+
+        {/* RATING */}
+        <div className="text-black text-sm mb-1">
+          {'★'.repeat(item.rating)}
+          {'☆'.repeat(5 - item.rating)}
+        </div>
+
+        {/* TITLE */}
+        <h3 className="text-gray-900 font-semibold text-sm mb-1">
+          {item.title}
+        </h3>
+
+        {/* PRICE */}
+        <div className="flex items-center gap-2">
+          <span className="text-gray-900 font-bold text-sm">{item.price}</span>
+          {item.originalPrice && (
+            <span className="text-gray-400 line-through text-xs">
+              {item.originalPrice}
+            </span>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+<div className="w-full flex justify-center">
+  <div className="flex w-full max-w-6xl">
+    <div className="w-3/4 h-[1px] bg-black"></div>
+    <div className="w-1/4 h-[1px] bg-gray-300"></div>
+  </div>
+</div>
+
+<section className="bg-white py-12 px-4 md:px-16">
+  <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+    {[
+      {
+        icon: "🚚",
+        title: "Free Shipping",
+        subtitle: "Order above $200",
+      },
+      {
+        icon: "💳",
+        title: "Money-back",
+        subtitle: "30 days guarantee",
+      },
+      {
+        icon: "🔒",
+        title: "Secure Payments",
+        subtitle: "Secured by Stripe",
+      },
+      {
+        icon: "📞",
+        title: "24/7 Support",
+        subtitle: "Phone and Email support",
+      },
+    ].map((feature, index) => (
       <div
-        style={{ backgroundImage: "url('/image/furniture/chair2.jpg')" }}
-        className="bg-cover bg-center p-10 text-center text-white mt-12"
+        key={index}
+        className=" bg-gray-100 rounded-lg p-6  flex flex-col items-center text-center space-y-2"
       >
-        <p className="text-3xl font-bold">Join Our Newsletter</p>
-        <p>Sign up for deals, new products and promotions</p>
-        <div className="flex justify-center space-x-4 mt-4">
-          <input type="email" placeholder="Email address" className="p-2 rounded text-black" />
-          <a href="/sign-up" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-gray-800">Sign Up</a>
-        </div>
+        <div className="text-4xl">{feature.icon}</div>
+        <h3 className="font-semibold text-black text-lg">{feature.title}</h3>
+        <p className="text-gray-500 text-sm">{feature.subtitle}</p>
       </div>
-      
+    ))}
+  </div>
+</section>
+
+ <section className="w-full flex flex-col md:flex-row items-center">      
+   <div className="w-full md:w-1/2">           
+   <img src="/image/furniture/sofa3.jpg"  alt="sofa5" className=" h-86 w-full" />       
+   </div>         
+   <div className="w-full md:w-1/2 bg-gray-200 p-20  h-86 flex flex-col justify-center items-center">           
+   <h3 className="text-2xl font-bold mb-2 text-gray-800">HUNDREDS of New Lower Prices!</h3>          
+    <p className="text-gray-600">Discover new markdowns on furniture, décor, and more—updated every week.</p>          
+     <a href="#" className="mt-4 inline-block bg-green-500 text-white px-6 py-2 rounded hover:bg-gray-800 transition">Shop Now</a>        
+   </div>       
+  </section> 
+    
+      <section className="max-w-7xl mx-auto px-8 py-16">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-medium text-gray-800">Articles</h2>
+          <a href="#" className="text-gray-600 hover:underline flex items-center">
+            More Articles <span className="ml-2">→</span>
+          </a>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {article.map((item, index) => (
+            <article key={index} className="group cursor-pointer">
+              <div className="mb-4">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" 
+                />
+              </div>
+              <h4 className="text-xl font-medium text-gray-800 group-hover:underline">
+                {item.title}
+              </h4>
+            </article>
+          ))}
+        </div>
+      </section>
+
+<div className="flex w-full h-96 items-center justify-center bg-gray-100">
+  {/* Left image */}
+  <img
+    src="image/furniture/bedroom.png"
+    alt=""
+    className="w-1/3 h-full object-cover "
+  />
+
+  {/* Center content between images */}
+  <div className="w-1/3 h-full flex flex-col items-center justify-center text-center px-6">
+    <h2 className="text-3xl font-semibold text-black mb-4">
+      Join Our Newsletter
+    </h2>
+    <p className="text-black mb-6 text-lg">
+      Sign up for deals, new products and promotions
+    </p>
+    <div className="flex items-center border-b-2 border-black w-full max-w-md">
+      <input
+        type="email"
+        placeholder="Email address"
+        className="flex-1 bg-transparent border-none outline-none text-black placeholder-black text-lg"
+      />
+      <span className="text-black font-semibold hover:text-gray-800 ml-4 text-lg border-b border-black pb-1 cursor-pointer">
+        Signup
+      </span>
+    </div>
+  </div>
+
+  {/* Right image */}
+  <img
+    src="image/furniture/chair1.png"
+    alt=""
+    className="w-1/3 h-full object-cover"
+  />
+</div>
+
+
+
 
     </main>
   );
