@@ -99,7 +99,7 @@ export default function Dashboard1() {
   </div>
 </div>
 
-<section className="w-full ml-50 px-4 md:px-8 py-20 ">
+<section className="w-full ml-50 px-2 md:px-6 py-20 ">
   <div className="flex justify-between items-center mb-12 px-2">
     <h2 className="text-4xl font-medium text-gray-900">New Arrivals</h2>
     <a
@@ -114,7 +114,6 @@ export default function Dashboard1() {
     {newArrivals.map((item, index) => (
       <div key={index} className="group cursor-pointer">
         <div className="relative mb-4 rounded-xl overflow-hidden bg-gray-100">
-          {/* BADGES over image */}
           {item.isNew && (
             <div className="absolute top-3 left-3 z-10 space-y-2 bg-gray-100 ">
               <span className="block bg-white text-black text-[10px] font-semibold px-2 py-0.5 rounded shadow-sm">
@@ -245,40 +244,48 @@ export default function Dashboard1() {
         </div>
       </section>
 
-<div className="flex w-full h-96 items-center justify-center bg-gray-100">
-  <img
-    src="image/furniture/bedroom.png"
-    alt=""
-    className="w-1/3 h-full object-cover "
-  />
+      <div className="relative flex w-full h-[280px] bg-gray-100">
+  {/* Left: Dresser */}
+  <div className="w-1/3 h-full">
+    <img
+      src="image/furniture/bedroom.png"
+      alt="dresser"
+      className="w-full h-full object-cover left-0 bottom-0"
+    />
+  </div>
 
-  
-  <div className="w-1/3 h-full flex flex-col items-center justify-center text-center px-6">
-    <h2 className="text-3xl font-semibold text-black mb-4">
+  {/* Center: Newsletter */}
+  <div className="w-1/3 h-full flex flex-col items-center justify-center pl-20">
+    <h2 className="text-4xl font-semibold text-black mb-2">
       Join Our Newsletter
     </h2>
-    <p className="text-black mb-6 text-lg">
+    <p className="text-black text-base mb-4 text-xl">
       Sign up for deals, new products and promotions
     </p>
-    <div className="flex items-center border-b-2 border-black w-full max-w-md">
+    <div className="flex items-center border-b border-black w-full max-w-md">
       <input
         type="email"
         placeholder="Email address"
-        className="flex-1 bg-transparent border-none outline-none text-black placeholder-black text-lg"
+        className="flex-1 bg-transparent outline-none text-black placeholder-black text-sm py-2"
       />
-      <span className="text-black font-semibold hover:text-gray-800 ml-4 text-lg border-b border-black pb-1 cursor-pointer">
+      <span className="ml-4 text-sm font-medium text-black cursor-pointer hover:text-gray-800">
         Signup
       </span>
     </div>
   </div>
 
-  <img
-    src="image/furniture/chair1.png"
-    alt=""
-    className="w-1/3 h-full object-cover"
-  />
+  {/* Right: Half Chair in Corner */}
+  <div className="absolute bottom-0 right-0 h-full w-1/3 overflow-hidden">
+    <img
+      src="image/furniture/chair1.png"
+      alt="chair"
+      className="h-full w-full object-cover ml-80 mb-20 "
+    />
+  </div>
 </div>
+
+
 
 </main>
   );
-}
+} 
