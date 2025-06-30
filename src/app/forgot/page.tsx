@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import chair from "../../../public/image/chair1.jpg"
+import chair from "../../../public/image/chair1.jpg";
+import axios from "axios";
 
 function ForgotPassword() {
   const [emailSent, setEmailSent] = useState(false);
@@ -15,27 +16,26 @@ function ForgotPassword() {
     setError("");
 
     try {
-      const response = await fetch(".........................", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
+      const response = await axios.post(
+        "https://elegant-be.onrender.com/api/users/forgotPassword", // ← replace with actual endpoint
+        { email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send reset email");
+      if (response.status === 200) {
+        setEmailSent(true);
       }
-
-      setEmailSent(true);
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
+    } catch (err: unknown) {
+      
+      const errorMessage =
+        axios.isAxiosError(err) && err.response?.data?.message
+          ? err.response.data.message
+          : "Something went wrong. Please try again.";
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
