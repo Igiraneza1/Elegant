@@ -2,12 +2,12 @@
 import Image from "next/image";
 import React from "react";
 
-// Define a simple StarIcon component
+// Star Icon Component
 function StarIcon({ filled, half }: { filled: boolean; half?: boolean }) {
   return (
     <svg
       className={`w-5 h-5 ${
-        filled ? "text-yellow-400" : half ? "text-yellow-300" : "text-gray-300"
+        filled ? "text-black" : half ? "text-black" : "text-gray-300"
       }`}
       fill="currentColor"
       viewBox="0 0 20 20"
@@ -67,7 +67,8 @@ const headsets: Headset[] = [
     title: "Skullcandy - Rail True Wireless",
     category: "Earbuds",
     price: "$129.99",
-    description: "THX Spatial Audio, lightweight design, and noise-canceling mic.",
+    description:
+      "THX Spatial Audio, lightweight design, and noise-canceling mic.",
     rating: 5,
     productType: "new-arrivals",
   },
@@ -84,38 +85,29 @@ const headsets: Headset[] = [
   },
 ];
 
-// Determine badge text and color based on product type
-const getBadgeInfo = (productType: string) => {
-  switch (productType) {
-    case "new-arrivals":
-      return { text: "New", color: "bg-blue-500" };
-    case "best-seller":
-      return { text: "Hot", color: "bg-red-500" };
-    case "shop-collection":
-      return { text: "Collection", color: "bg-green-500" };
-    default:
-      return { text: "", color: "" };
-  }
+const getBadgeInfo = () => {
+  return { text: "New", color: "text-black" };
 };
 
 export default function AllProducts() {
   return (
     <div className="w-full bg-white py-20 px-4 sm:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-gray-900">All Products</h2>
+        <h2 className="text-3xl font-bold mb-12 text-gray-900">New Arrivals</h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {headsets.map((headset) => {
-            const badge = getBadgeInfo(headset.productType);
+            const badge = getBadgeInfo();
             return (
-              <div key={headset.id} className="bg-white p-4 flex flex-col relative">
-                {/* Product badge */}
-                {badge.text && (
-                  <span className={`absolute top-2 left-2 ${badge.color} text-white text-xs px-2 py-1 rounded`}>
+              <div
+                key={headset.id}
+                className="group relative bg-white p-4 flex flex-col rounded-lg shadow-sm"
+              >
+                {/* 🏷 Badge placed inside image wrapper */}
+                <div className="relative h-64 w-full mb-4">
+                  <span className="absolute top-2 left-2  text-black text-xs font-bold">
                     {badge.text}
                   </span>
-                )}
-                
-                <div className="relative h-64 w-full mb-4">
                   <Image
                     src={headset.image}
                     alt={headset.title}
@@ -123,6 +115,7 @@ export default function AllProducts() {
                     className="object-contain p-4"
                   />
                 </div>
+
                 <div className="flex items-center mb-3 text-black">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon
@@ -135,14 +128,18 @@ export default function AllProducts() {
                     />
                   ))}
                 </div>
+
                 <div className="mb-4">
-                  <h4 className="font-bold text-black text-sm">{headset.title}</h4>
+                  <h4 className="font-bold text-black text-sm">
+                    {headset.title}
+                  </h4>
                   <p className="text-black">{headset.category}</p>
                   <span className="text-black font-bold text-sm">
                     {headset.price}
                   </span>
                 </div>
-                <button className="w-full mt-auto bg-black text-white py-2 rounded-lg hover:bg-gray-900 transition">
+
+                <button className="w-full mt-auto bg-black text-white py-2 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
                   Add to Cart
                 </button>
               </div>
