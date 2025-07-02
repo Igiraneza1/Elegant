@@ -25,7 +25,6 @@ interface Headset {
   category: string;
   description: string;
   rating: number;
-  productType: "new-arrivals" | "shop-collection" | "best-seller";
 }
 
 const headsets: Headset[] = [
@@ -38,7 +37,6 @@ const headsets: Headset[] = [
     description:
       "7.1 virtual surround sound, memory foam ear cushions, durable aluminum frame.",
     rating: 5,
-    productType: "new-arrivals",
   },
   {
     id: 2,
@@ -49,7 +47,6 @@ const headsets: Headset[] = [
     description:
       "Wireless gaming headset with 24-hour battery life and ClearCast microphone.",
     rating: 5,
-    productType: "best-seller",
   },
   {
     id: 3,
@@ -59,7 +56,6 @@ const headsets: Headset[] = [
     price: "$149.99",
     description: "Lightweight design with powerful noise-canceling features.",
     rating: 5,
-    productType: "shop-collection",
   },
   {
     id: 4,
@@ -70,7 +66,6 @@ const headsets: Headset[] = [
     description:
       "THX Spatial Audio, lightweight design, and noise-canceling mic.",
     rating: 5,
-    productType: "new-arrivals",
   },
   {
     id: 5,
@@ -81,7 +76,6 @@ const headsets: Headset[] = [
     description:
       "Blue VOICE microphone tech, premium memory foam earpads, and pro-grade sound.",
     rating: 5,
-    productType: "best-seller",
   },
 ];
 
