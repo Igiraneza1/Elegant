@@ -245,7 +245,7 @@ export default function Dashboard1() {
       </section>
 
       <div className="relative flex w-full h-[280px] bg-gray-100">
-  {/* Left: Dresser */}
+
   <div className="w-1/3 h-full">
     <img
       src="image/furniture/bedroom.png"
@@ -254,7 +254,7 @@ export default function Dashboard1() {
     />
   </div>
 
-  {/* Center: Newsletter */}
+
   <div className="w-1/3 h-full flex flex-col items-center justify-center pl-20">
     <h2 className="text-4xl font-semibold text-black mb-2">
       Join Our Newsletter
@@ -274,7 +274,7 @@ export default function Dashboard1() {
     </div>
   </div>
 
-  {/* Right: Half Chair in Corner */}
+  
   <div className="absolute bottom-0 right-0 h-full w-1/3 overflow-hidden">
     <img
       src="image/furniture/chair1.png"
