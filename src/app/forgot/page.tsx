@@ -71,7 +71,7 @@ function ForgotPassword() {
             </div>
           ) : (
             <>
-              <h1 className="text-3xl font-bold mb-4">Forgot Password</h1>
+              <h1 className="text-3xl text-gray-800 font-bold mb-4">Forgot Password</h1>
               <p className="text-gray-500 mb-6">
                 Enter your email to reset your password.
               </p>

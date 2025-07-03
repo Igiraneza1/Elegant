@@ -4,8 +4,7 @@ function page() {
   return (
     <div> 
         <SignIn />
-        
-
+      
     </div>
   )
 }

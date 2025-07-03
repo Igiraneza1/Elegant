@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="grid items-center justify-center bg-gray-200 h-screen">
-      <div className="bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6">
-        <div className="flex items-center justify-center">
+    <div className="grid items-center justify-center bg-gray-200 h-screen"> 
+      <div className="bg-white p-6  md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6 rounded ">
+        <div className="flex items-center justify-center ">
           <Image
             src={chair}
             alt="Chair"
@@ -21,7 +21,7 @@ export default function SignIn() {
         </div>
 
         <div>
-          <h1 className="text-3xl font-bold mb-4">Sign In</h1>
+          <h1 className="text-3xl text-gray-800 font-bold mb-4">Sign In</h1>
           <p className="text-gray-500 mb-6">
             Do not have an account yet?{" "}
             <Link href="/sign-up" className="text-green-500 hover:underline">
