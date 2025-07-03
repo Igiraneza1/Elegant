@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar/page";
-import Footer from "./footer/page";
+// import Footer from "./footer/page";
 
 // Load Google Fonts
 const inter = Inter({
@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-white text-black">
         <Navbar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

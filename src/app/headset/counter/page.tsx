@@ -63,7 +63,7 @@ const Counter = () => {
   ];
 
   return (
-    <div className="relative h-max w-screen overflow-hidden">
+    <div className="relative h-max w-screen">
       <div className="h-full w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
           <div className="relative order-2 lg:order-1 h-full">
