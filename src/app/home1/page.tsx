@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function Dashboard1() {
   const slides = [
@@ -41,9 +42,9 @@ export default function Dashboard1() {
   return (
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
-      <div className="w-full h-96 bg-gray-100 mx-auto relative mx-5">      
+      <div className="w-full h-96 bg-gray-100 relative mx-5">      
           <div className="overflow-hidden rounded-xl shadow-md">         
-            <img src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
+            <Image src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
           </div>          
                       
                   <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
@@ -62,7 +63,7 @@ export default function Dashboard1() {
       <h3 className="text-xl font-semibold mb-2 text-gray-800">Living Room</h3>
       <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
     </div>
-    <img
+    <Image
       src={'image/furniture/livingroom.png'}
       alt="livingroom"
       className="w-full h-full object-cover rounded-t-lg"
@@ -77,7 +78,7 @@ export default function Dashboard1() {
         <h3 className="text-xl font-semibold mb-2 text-gray-800">Bedroom</h3>
         <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
       </div>
-      <img
+      <Image
         src={'image/furniture/bedroom.png'}
         alt="bedroom"
         className="h-full w-64 object-cover"
@@ -90,7 +91,7 @@ export default function Dashboard1() {
         <h3 className="text-xl font-semibold mb-2 text-gray-800">Kitchen</h3>
         <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
       </div>
-      <img
+      <Image
         src={'image/furniture/toasted.png'}
         alt="kitchen"
         className="h-full w-64 object-cover"
@@ -124,7 +125,7 @@ export default function Dashboard1() {
               </span>
             </div>
           )}
-            <img
+            <Image
              src={item.image}
              alt={item.title}
              className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
@@ -206,7 +207,7 @@ export default function Dashboard1() {
 
  <section className="w-full flex flex-col md:flex-row items-center">      
    <div className="w-full md:w-1/2">           
-   <img src="/image/furniture/sofa3.jpg"  alt="sofa5" className=" h-86 w-full" />       
+   <Image src="/image/furniture/sofa3.jpg"  alt="sofa5" className=" h-86 w-full" />       
    </div>         
    <div className="w-full md:w-1/2 bg-gray-200 p-20  h-86 flex flex-col justify-center items-center">
    <p className='text-blue-400 text-2xl mr-60'>SALE UP TO 35% OFF</p>           
@@ -230,7 +231,7 @@ export default function Dashboard1() {
           {article.map((item, index) => (
             <article key={index} className="group cursor-pointer">
               <div className="mb-4">
-                <img 
+                <Image
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" 
@@ -247,7 +248,7 @@ export default function Dashboard1() {
       <div className="relative flex w-full h-[280px] bg-gray-100">
 
   <div className="w-1/3 h-full">
-    <img
+    <Image
       src="image/furniture/bedroom.png"
       alt="dresser"
       className="w-full h-full object-cover left-0 bottom-0"
@@ -259,7 +260,7 @@ export default function Dashboard1() {
     <h2 className="text-4xl font-semibold text-black mb-2">
       Join Our Newsletter
     </h2>
-    <p className="text-black text-base mb-4 text-xl">
+    <p className="text-black mb-4 text-xl">
       Sign up for deals, new products and promotions
     </p>
     <div className="flex items-center border-b border-black w-full max-w-md">
@@ -276,7 +277,7 @@ export default function Dashboard1() {
 
   
   <div className="absolute bottom-0 right-0 h-full w-1/3 overflow-hidden">
-    <img
+    <Image
       src="image/furniture/chair1.png"
       alt="chair"
       className="h-full w-full object-cover ml-80 mb-20 "

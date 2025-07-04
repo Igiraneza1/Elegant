@@ -97,7 +97,7 @@ export default function AllProducts() {
                 key={headset.id}
                 className="group relative bg-white p-4 flex flex-col rounded-lg shadow-sm"
               >
-                {/* 🏷 Badge placed inside image wrapper */}
+          
                 <div className="relative h-64 w-full mb-4">
                   <span className="absolute top-2 left-2  text-black text-xs font-bold">
                     {badge.text}
