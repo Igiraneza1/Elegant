@@ -17,7 +17,7 @@ function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        "https://elegant-be.onrender.com/api/users/forgotPassword", // ← replace with actual endpoint
+        "https://elegant-be.onrender.com/api/users/forgotPassword", 
         { email },
         {
           headers: {

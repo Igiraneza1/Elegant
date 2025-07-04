@@ -1,4 +1,6 @@
 
+import Image from 'next/image';
+
 export default function SportHome() {
     return(
         <div>
@@ -6,15 +8,19 @@ export default function SportHome() {
                 <span>
                     More Than
                     just a game
-                    It's a lifestyle
+                    It is a lifestyle
                 </span>
                 <span>
-                    Whether you're just starting out, have played
-                    your whole life or you're a Tour pro, your 
-                    swing is like a fingerprint.
+                    Whether you are just starting out, have played
+                    your whole life or you are a Tour pro, your 
+                    <Image
+                        src="/path/to/your/image.jpg"
+                        alt="Sport Image"
+                        width={800}
+                        height={400}
+                        style={{ width: "100%", height: "auto" }}
+                    />
                 </span>
-                <img src="" alt="" />
-                 
             </div>
             <div>
                 

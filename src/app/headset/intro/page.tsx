@@ -9,8 +9,10 @@ export default function Intro() {
             <Image
               src={background}
               alt="Music background"
-              className="w-full h-auto object-cover rounded-lg"
-              priority
+              width={500}
+              height={500}
+              className="w-full h-full"
+              
             />
           </div>
           <div className="w-full md:w-1/2 text-center md:text-left">
