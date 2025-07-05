@@ -5,6 +5,7 @@ import Shop from "./shop/page";
 import Seller from "./seller/page";
 import Counter from "./counter/page";
 import Instagram from "./instagram/page";
+import ServicesGrid from "./service/page";
 import HeadsetFooter from "./footer/page";
 
 export default function HeadsetHomepage() {
@@ -16,6 +17,7 @@ export default function HeadsetHomepage() {
             <Seller/>
             <Counter/>
             <Instagram/>  
+            <ServicesGrid/>
             <HeadsetFooter/>
         </div>
     )
