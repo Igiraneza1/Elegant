@@ -83,7 +83,7 @@ const bestSellers = [
 
 export default function BestSellers() {
   return (
-    <div className="sm:p-20 lg:p-30 bg-gray-50">
+    <div className="p-10 md:p-20 lg:p-30 bg-gray-50">
       <h2 className="text-3xl font-bold text-center mb-5">Best Seller</h2>
       <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {bestSellers.map((item) => (
