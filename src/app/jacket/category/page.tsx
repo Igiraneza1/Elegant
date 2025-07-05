@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-// ✅ Import images statically
+
 import jacket1 from "../../../../public/image/jacket/jacket6.jpg";
 import jacket2 from "../../../../public/image/jacket/jacket2.jpg";
 import jacket3 from "../../../../public/image/jacket/jacket1.jpg";
