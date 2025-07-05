@@ -28,17 +28,16 @@ export default function Category() {
   return (
     <div className="py-10 px-4">
       <h2 className="text-2xl font-bold text-center mb-8">Shop by Category</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 sm:px-8 md:px-15 lg:px-30">
         {categories.map((item) => (
           <div key={item.id} className="text-center">
             <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto overflow-hidden rounded-full shadow-md">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={160}
-                height={160}
+                width={100}
+                height={100}
                 className="object-cover w-full h-full"
-                placeholder="blur"
               />
             </div>
             <p className="mt-2 text-sm font-medium text-gray-700">{item.title}</p>
