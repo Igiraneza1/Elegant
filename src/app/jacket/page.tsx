@@ -5,6 +5,8 @@ import Category from "./category/page"
 import Collection from "./collection/page"
 import BestSellers  from "./hot/page"
 import SaleBanner from "./sale/page"
+import Video from "./winter/page"
+import LatestArticles from "./article/page"
 
 export default function JacketPage(){
     return(
@@ -15,6 +17,8 @@ export default function JacketPage(){
             <Collection/>
             <BestSellers/>
             <SaleBanner/>
+            <Video/>
+            <LatestArticles/>
 
         </div>
     )
