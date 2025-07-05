@@ -9,13 +9,9 @@ import jacket4 from "../../../../public/image/jacket/jacket7.jpg";
 import jacket5 from "../../../../public/image/jacket/jacket8.jpg";
 import jacket6 from "../../../../public/image/jacket/jacket9.jpg";
 
-interface Category {
-  id: number;
-  image: any;
-  title: string;
-}
 
-const categories: Category[] = [
+
+const categories = [
   { id: 1, title: "Puffers", image: jacket1 },
   { id: 2, title: "Bombers", image: jacket2 },
   { id: 3, title: "Lightweight Jackets", image: jacket3 },
