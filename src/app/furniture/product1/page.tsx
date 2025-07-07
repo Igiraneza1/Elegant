@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Product1() {
   useParams();
@@ -76,7 +77,6 @@ export default function Product1() {
 
   return (
     <section className="bg-white text-black">
-      {/* Banner */}
       <div className="bg-purple-100 text-purple-700 text-center py-2">
         30% off storewide – Limited time. <a href="#" className="underline">Shop Now →</a>
       </div>
@@ -94,10 +94,9 @@ export default function Product1() {
           <span>👤</span>
         </div>
       </header>
-      {/* Product Section */}
+    
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Image section */}
           <div className="md:w-1/2">
             <Image
               src="/image/furniture/table.png"
@@ -177,7 +176,7 @@ export default function Product1() {
           </div>
         </div>
 
-        {/* Reviews Section */}
+  
         <div className="mt-12" id="reviews">
           <div className="flex space-x-4 mb-4 text-gray-600">
             <a href="#additional-info" className="hover:text-gray-900">Additional Info</a>
@@ -264,6 +263,55 @@ export default function Product1() {
           />
         </div>
       </div>
+      <div className="w-full py-10 px-6 bg-black">
+        <div className="max-w-7xl mx-auto space-y-8">
+      
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-xl font-bold text-white">
+                Elegant.
+                <span className="text-gray-400 text-sm font-light">
+                  {" "} | Headphone Store
+                </span>
+              </p>
+            </div>
+
+            <nav>
+              <ul className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium text-gray-400">
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/shop">Shop</Link></li>
+                <li><Link href="/product">Product</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div className="border-t border-gray-700"></div>
+
+          
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
+              <p>&copy; 2023 Elegant. All rights reserved.</p>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Use</Link>
+            </div>
+
+            <ul className="flex gap-4">
+              <li>
+                <Link href="https://www.facebook.com/" target="_blank" className="hover:text-blue-400">Facebook</Link>
+              </li>
+              <li>
+                <Link href="https://www.instagram.com/" target="_blank" className="hover:text-pink-400">Instagram</Link>
+              </li>
+              <li>
+                <Link href="https://www.twitter.com/" target="_blank" className="hover:text-blue-300">Twitter</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
+    
   );
 }
