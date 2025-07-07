@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
-export default function Dashboard1() {
+export default function home1() {
   const slides = [
     { image: '/image/furniture/sofa1.jpg', title: 'Modern Leather Sofa', description: 'Modern leather sofa with mint pillows.', price: '89k' },
     {image: '/image/furniture/chair1.png', title: 'Elegant chair', description: 'Elegant chair with a modern design.', price: '89k' },
@@ -63,7 +64,7 @@ export default function Dashboard1() {
       <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
     </div>
     <img
-      src={'image/furniture/livingroom.png'}
+      src={'/image/furniture/livingroom.png'}
       alt="livingroom"
       className="w-full h-full object-cover rounded-t-lg"
     />
@@ -78,7 +79,7 @@ export default function Dashboard1() {
         <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
       </div>
       <img
-        src={'image/furniture/bedroom.png'}
+        src={'/image/furniture/bedroom.png'}
         alt="bedroom"
         className="h-full w-64 object-cover"
       />
@@ -91,7 +92,7 @@ export default function Dashboard1() {
         <a href="#" className="text-sm text-gray-600 hover:underline">Shop Now →</a>
       </div>
       <img
-        src={'image/furniture/toasted.png'}
+        src={'/image/furniture/toasted.png'}
         alt="kitchen"
         className="h-full w-64 object-cover"
       />
@@ -248,9 +249,9 @@ export default function Dashboard1() {
 
   <div className="w-1/3 h-full">
     <img
-      src="image/furniture/bedroom.png"
+      src="/image/furniture/bedroom.png"
       alt="dresser"
-      className="w-full h-full object-cover left-0 bottom-0"
+      className="w-full h-full object-cover left-0 bottom-0 mb-20 mr-40"
     />
   </div>
 
@@ -277,48 +278,61 @@ export default function Dashboard1() {
   
   <div className="absolute bottom-0 right-0 h-full w-1/3 overflow-hidden">
     <img
-      src="image/furniture/chair1.png"
+      src="/image/furniture/chair1.png"
       alt="chair"
-      className="h-full w-full object-cover ml-80 mb-20 "
+      className="h-full w-full object-cover ml-50 mb-20 "
     />
   </div>
 </div>
-<section>
-  <div className="relative flex w-full h-[200px] bg-gray-100">
-      
-      <div className="w-1/3 h-full flex items-center">
-        <img
-          src="/image/furniture/bedroom.png" 
-          alt="dresser"
-          className="w-auto h-full object-contain pl-4"
-        />
-      </div>
 
-      <div className="w-1/3 h-full flex flex-col items-center justify-center text-center px-4">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Join Our Newsletter</h2>
-        <p className="text-gray-600 text-base mb-4">Sign up for deals, new products and promotions</p>
-        <div className="flex items-center w-full max-w-xs">
-          <input
-            type="email"
-            placeholder="Email address"
-            className="flex-1 bg-transparent border-b border-gray-900 outline-none text-gray-900 placeholder-gray-900 text-sm py-1"
-          />
-          <button className="ml-4 text-sm font-medium text-gray-900 hover:text-gray-700">Signup</button>
+<div className="w-full py-10 px-6 bg-black">
+        <div className="max-w-7xl mx-auto space-y-8">
+          {/* Brand & Nav */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-xl font-bold text-white">
+                Elegant.
+                <span className="text-gray-400 text-sm font-light">
+                  {" "} | Headphone Store
+                </span>
+              </p>
+            </div>
+
+            <nav>
+              <ul className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium text-gray-400">
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/shop">Shop</Link></li>
+                <li><Link href="/product">Product</Link></li>
+                <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div className="border-t border-gray-700"></div>
+
+          {/* Bottom Footer */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
+              <p>&copy; 2023 Elegant. All rights reserved.</p>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Use</Link>
+            </div>
+
+            <ul className="flex gap-4">
+              <li>
+                <Link href="https://www.facebook.com/" target="_blank" className="hover:text-blue-400">Facebook</Link>
+              </li>
+              <li>
+                <Link href="https://www.instagram.com/" target="_blank" className="hover:text-pink-400">Instagram</Link>
+              </li>
+              <li>
+                <Link href="https://www.twitter.com/" target="_blank" className="hover:text-blue-300">Twitter</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-    
-      <div className="w-1/3 h-full flex items-center justify-end pr-4">
-        <img
-          src="/image/furniture/chair1.png"
-          alt="chair with blanket"
-          className="w-auto h-4/5 object-contain"
-        />
-      </div>
-    </div>
-</section>
-
-
 </main>
   );
 } 
