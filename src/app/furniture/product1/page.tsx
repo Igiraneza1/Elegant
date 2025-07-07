@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Product1() {
   useParams();
@@ -93,7 +94,7 @@ export default function Product1() {
           <span>👤</span>
         </div>
       </header>
-      {/* Product Section */}
+    
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/2">
@@ -175,7 +176,7 @@ export default function Product1() {
           </div>
         </div>
 
-        {/* Reviews Section */}
+  
         <div className="mt-12" id="reviews">
           <div className="flex space-x-4 mb-4 text-gray-600">
             <a href="#additional-info" className="hover:text-gray-900">Additional Info</a>
