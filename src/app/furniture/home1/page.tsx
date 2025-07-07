@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function home1() {
   const slides = [
@@ -43,9 +44,17 @@ export default function home1() {
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
       <div className="w-full h-96 bg-gray-100 mx-auto relative mx-5">      
-          <div className="overflow-hidden rounded-xl shadow-md">         
-            <img src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
-          </div>          
+      
+<div className="relative w-full h-[400px] mt-0 pt-0"> 
+  <Image
+    src={slides[current].image}
+    alt={`Slide ${current + 1}`}
+    fill
+    onClick={() => setShowDescription(!showDescription)}
+    className="object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+  />
+</div>
+  
                       
                   <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
                   <button onClick={nextSlide} className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black">→</button>     
@@ -269,9 +278,9 @@ export default function home1() {
         placeholder="Email address"
         className="flex-1 bg-transparent outline-none text-black placeholder-black text-sm py-2"
       />
-      <span className="ml-4 text-sm font-medium text-black cursor-pointer hover:text-gray-800">
+      <a  href ="/sign-up " className="ml-4 text-sm font-medium text-black cursor-pointer hover:text-gray-800">
         Signup
-      </span>
+      </a>
     </div>
   </div>
 

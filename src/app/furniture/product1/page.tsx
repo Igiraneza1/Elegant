@@ -103,7 +103,7 @@ export default function Product1() {
               alt="Main Product"
               width={800}
               height={400}
-              className="w-full h-[400px] object-cover rounded"
+              className="w-full h-[400px] object-cover rounded relative"
               priority
             />
             <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded">NEW</span>
@@ -111,8 +111,16 @@ export default function Product1() {
           </div>
           <div className="flex gap-4 mt-4">
             {['/image/furniture/table1.jpg', '/image/furniture/table2.jpg', '/image/furniture/table3.jpg'].map((img, idx) => (
-              <Image key={idx} src={img} className="w-48 h-36 object-cover border rounded" alt={`alt-${idx}`} />
-            ))}
+  <Image
+    key={idx}
+    src={img}
+    alt={`alt-${idx}`}
+    width={192} // Tailwind w-48 = 192px
+    height={144} // Tailwind h-36 = 144px
+    className="object-cover border rounded"
+  />
+))}
+
           </div>
         </div>
 

@@ -1,6 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { FaShippingFast } from "react-icons/fa";
+import { LiaMoneyBillSolid } from "react-icons/lia";
+import { GrSecure } from "react-icons/gr";
+import { IoCallOutline } from "react-icons/io5";
+
 
 export default function Dashboard1() {
   const slides = [
@@ -44,8 +49,21 @@ export default function Dashboard1() {
                                                                        
       <div className="w-full h-96 bg-gray-100 relative mx-5">      
           <div className="overflow-hidden rounded-xl shadow-md">         
-            <Image src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
-          </div>          
+
+        <div className="relative w-full h-[400px]">
+         <Image
+         src={slides[current].image}
+         alt={`Slide ${current + 1}`}
+         width={1200}
+         height={400}
+         onClick={() => setShowDescription(!showDescription)}
+         className="object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+/>
+
+</div>
+
+</div>
+
                       
                   <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
                   <button onClick={nextSlide} className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black">→</button>     
@@ -172,26 +190,26 @@ export default function Dashboard1() {
 <section className="bg-white py-12 px-4 md:px-16">
   <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
     {[
-      {
-        icon: "🚚",
-        title: "Free Shipping",
-        subtitle: "Order above $200",
-      },
-      {
-        icon: "💳",
-        title: "Money-back",
-        subtitle: "30 days guarantee",
-      },
-      {
-        icon: "🔒",
-        title: "Secure Payments",
-        subtitle: "Secured by Stripe",
-      },
-      {
-        icon: "📞",
-        title: "24/7 Support",
-        subtitle: "Phone and Email support",
-      },
+       {
+    icon: <FaShippingFast className="text-2xl text-black" />,
+    title: "Free Shipping",
+    subtitle: "Order above $200",
+  },
+  {
+    icon: <LiaMoneyBillSolid className="text-2xl text-black" />,
+    title: "Money-back",
+    subtitle: "30 days guarantee",
+  },
+  {
+    icon: <GrSecure className="text-2xl text-black" />,
+    title: "Secure Payments",
+    subtitle: "Secured by Stripe",
+  },
+  {
+    icon: <IoCallOutline className="text-2xl text-black" />,
+    title: "24/7 Support",
+    subtitle: "Phone and Email support",
+  },
     ].map((feature, index) => (
       <div
         key={index}
