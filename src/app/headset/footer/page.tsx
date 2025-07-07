@@ -2,8 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import bheadset from "../../../../public/image/headset/bheadset.jpg";
-import woman3 from "../../../../public/image/headset/woman3.jpg";
+import bheadset from "../../../../public/image/headset/bgheadset.png";
+import woman3 from "../../../../public/image/headset/woman3.png";
 
 export default function Footer() {
   return (
@@ -15,8 +15,8 @@ export default function Footer() {
           <Image
             src={bheadset}
             alt="footer headset"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             className="object-contain"
           />
         </div>
@@ -47,8 +47,8 @@ export default function Footer() {
           <Image
             src={woman3}
             alt="footer woman"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             className="object-contain"
           />
         </div>

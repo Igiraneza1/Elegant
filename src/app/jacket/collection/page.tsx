@@ -1,51 +1,52 @@
-"use client"
-import React from "react"
+"use client";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-const collection : collections [] = [
-    {
-        id: 1,
-        name: "Winter Jackets",
-        image: "/image/jacket/winter.jpg"
-    },
-    {
-        id: 2,
-        name: "Leather Jackets",
-        image: "/image/jacket/leather.jpg"
-    },
-    {
-        id: 3,
-        name: "Casual Jackets",
-        image: "/image/jacket/casual.jpg"
-    },
-    {
-        id: 4,
-        name: "Sports Jackets",
-        image: "/image/jacket/sports.jpg"
-    }
+const collections = [
+  {
+    id: 1,
+    name: "November Outfits",
+    image: "/image/jacket/jacket10.jpg",
+  },
+  {
+    id: 2,
+    name: "Cashmere Set",
+    image: "/image/jacket/jacket11.jpg",
+  },
+  {
+    id: 3,
+    name: "The New Nordic",
+    image: "/image/jacket/jacket12.jpg",
+  },
+  {
+    id: 4,
+    name: "The Leather",
+    image: "/image/jacket/jacket13.jpg",
+  },
 ];
 
-export default function Collection(){
-    return(
-        <div>
+export default function Collection() {
+  return (
+    <div className="max-w-7xl mx-auto">
+      <div className="p-20 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:px-8 md:px-15 lg:px-30">
+        {collections.map((item) => (
+          <div key={item.id} className="relative group w-full h-[600px]">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-cover p-5"
+            />
+            <div className="absolute inset-0"></div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
-                {collection.map((item) => (
-                    <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                        <Image 
-                            src={item.image} 
-                            alt={item.name} 
-                            width={400} 
-                            height={300} 
-                            className="w-full h-48 object-cover"
-                        />
-                        <div className="p-4">
-                            <h2 className="text-xl font-semibold">{item.name}</h2>
-                        </div>
-                    </div>
-                ))}
+            <div className="absolute bottom-4 left-4 p-10 text-white">
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <Link href="" className="text-sm underline underline-offset-2">Collections →</Link>
             </div>
-
-        </div>
-    )
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

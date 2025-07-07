@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link"
-import man from "../../../../public/image/headset/man2.jpg";
-import woman1 from "../../../../public/image/headset/woman1.jpg";
-import woman2 from "../../../../public/image/headset/woman2.jpg";
-import headset10 from "../../../../public/image/headset/headset10.jpg";
+import jacket1 from "../../../../public/image/jacket/jacket21.jpg";
+import jacket2 from "../../../../public/image/jacket/jacket22.jpg";
+import jacket3 from "../../../../public/image/jacket/jacket23.jpg";
+import jacket4 from "../../../../public/image/jacket/jacket24.jpg";
 
 const Instagram = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:px-8 lg:px-16">
+    <section className="bg-white  px-4 sm:px-8 lg:px-16">
       <div className="text-center mb-10">
         <p className="text-gray-800 pb-3 text-sm">NEWFEEDS</p>
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
@@ -19,7 +19,7 @@ const Instagram = () => {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {[man, woman1, woman2, headset10].map((img, idx) => (
+        {[jacket1, jacket2, jacket3, jacket4].map((img, idx) => (
           <div key={idx} className="aspect-square overflow-hidden group">
             <Image
               src={img}
