@@ -151,41 +151,20 @@ export default function Home1() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col">
-      <div className="w-full h-96 bg-gray-100 relative mx-5">
-        <div className="relative overflow-hidden rounded-xl shadow-md h-[400px] w-full">
-          <Image
-            src={slides[current].image}
-            alt={`Slide ${current + 1}`}
-            onClick={() => setShowDescription(!showDescription)}
-            fill
-            className="object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
-          />
-        </div>
-
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black "
-        >
-          ←
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black"
-        >
-          →
-        </button>
-      </div>
-      <div className="flex justify-between space-x-96 mt-12 px-4 max-w-7xl mx-auto gap-20">
-        <p className="text-6xl text-gray-800">
-          Simply Unique/
-          <br />
-          Simply Better
-        </p>
-        <p className="text-sm text-gray-600 mt-10">
-          Elegant is a gift & decorations store based in Kigali,
-          <br /> Rwanda. Est since 2019
-        </p>
-      </div>
+                                                                       
+      <div className="w-full h-96 bg-gray-100 mx-auto relative mx-5">      
+          <div className="overflow-hidden rounded-xl shadow-md">         
+            <img src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
+          </div>          
+                      
+                  <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
+                  <button onClick={nextSlide} className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black">→</button>     
+          </div>               
+          <div className="flex justify-between space-x-96 mt-12 px-4 max-w-7xl mx-auto gap-20">        
+          <p className="text-6xl text-gray-800">Simply Unique/<br />Simply Better</p>      
+          <p className="text-sm text-gray-600 mt-10">Elegant is a gift & decorations store based in Kigali,<br/> Rwanda. Est since 2019</p>      
+          </div> 
+    
 
       <div className=" rounded-lg p-6 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg flex flex-col w-full h-[500px]">
@@ -407,6 +386,7 @@ export default function Home1() {
             className="w-full h-full object-cover left-0 bottom-0 mb-20 mr-40"
           />
         </div>
+
 
         <div className="w-1/3 h-full flex flex-col items-center justify-center pl-20">
           <h2 className="text-4xl font-semibold text-black mb-2">
