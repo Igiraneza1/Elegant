@@ -80,10 +80,10 @@ export default function Intro() {
     setCurrent((current - 1 + slides.length) % slides.length);
   const nextSlide = () => setCurrent((current + 1) % slides.length);
   return (
-    <div className="min-h-screen bg-gray-50 ">
+    <div className="">
       
     
-      <main className="flex flex-col items-center py-10 w-full">
+      <main className="flex flex-col items-center py-10 w-full t-4">
         <div className="relative w-full max-w-4xl">
           <Image
             

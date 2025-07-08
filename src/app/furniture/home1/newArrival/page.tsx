@@ -59,7 +59,7 @@ export default function NewArrivals() {
 
   return (
     <>
-      <section className="w-full ml-50 px-2 md:px-6 py-20 bg">
+      <section className="max-w-7xl ml-50 px-2 md:px-6 py-20 h-64 ">
         <div className="flex justify-between items-center mb-12 px-2">
           <h2 className="text-4xl font-medium text-gray-900">New Arrivals</h2>
           <a
@@ -93,7 +93,7 @@ export default function NewArrivals() {
                 />
 
                 {item.id === 1 && (
-                  <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 rounded-lg text-sm font-medium z-10">
+                  <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium z-10">
                     Add to cart
                   </button>
                 )}
@@ -119,7 +119,7 @@ export default function NewArrivals() {
         </div>
       </section>
 
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center mt-18">
         <div className="flex w-full max-w-6xl">
           <div className="w-3/4 h-[1px] bg-black"></div>
           <div className="w-1/4 h-[1px] bg-gray-300"></div>
