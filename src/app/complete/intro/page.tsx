@@ -3,7 +3,7 @@
 import { FaSearch, FaUser, FaShoppingBag } from "react-icons/fa";
 import Link from "next/link";
 
-export default function Header() {
+export default function Intro() {
   return (
     <div className="bg-gray-50">
 
