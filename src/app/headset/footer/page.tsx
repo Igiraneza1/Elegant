@@ -55,11 +55,11 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="w-full py-10 px-6 bg-black">
+     <div className="w-full py-10 px-6 bg-black">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Brand & Nav */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
+             <div className="text-center md:text-left">
               <p className="text-xl font-bold text-white">
                 Elegant.
                 <span className="text-gray-400 text-sm font-light">

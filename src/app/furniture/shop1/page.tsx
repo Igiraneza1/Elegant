@@ -135,10 +135,7 @@ export default function Shop1() {
       </header>
 
       
-      <div className="bg-purple-100 text-purple-700 text-center py-2 mb-4">
-        <span>30% off storewide - Limited time</span>
-        <Link href="/shop" className="underline ml-2">Shop Now →</Link>
-      </div>
+     
       <div className="relative h-86 bg-gray-300 mb-6">
         <Image
           src="/image/furniture/sofa4.jpg"
