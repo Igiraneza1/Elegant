@@ -52,7 +52,7 @@ export default function Main() {
         <div className="bg-white p-6 rounded-lg text-center bg-white shadow-lg ">
           <div className="mb-6">
             <h2 className="text-2xl  text-gray-400 font-bold mb-2">Thank you! </h2>
-            <p className="text-2xl">
+            <p className="text-3xl">
               Your order has been
               <br />
               received
