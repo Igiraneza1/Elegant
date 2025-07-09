@@ -1,6 +1,6 @@
 
 import Intro from "./intro/page";
-import ProductSection from "./product/page";
+import ProductSection from "./arrivals/page";
 import Shop from "./shop/page";
 import Seller from "./seller/page";
 import Counter from "./counter/page";

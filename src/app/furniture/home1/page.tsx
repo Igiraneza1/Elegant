@@ -152,9 +152,10 @@ export default function Home1() {
   return (
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
-      <div className="w-full h-96 bg-gray-100 mx-auto relative mx-5">      
+      <div className="w-full h-96 bg-gray-100 relative mx-5">      
           <div className="overflow-hidden rounded-xl shadow-md">         
-            <img src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
+            <Image src={slides[current].image}  alt={`Slide ${current + 1}`} onClick={() => setShowDescription(!showDescription)}             
+            className="min-w-screen  h-[400px]  object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"           />     
           </div>          
                       
                   <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
