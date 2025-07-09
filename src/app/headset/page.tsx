@@ -1,11 +1,11 @@
 
 import Intro from "./intro/page";
-import ProductSection from "./product/page";
+import ProductSection from "./arrivals/page";
 import Shop from "./shop/page";
 import Seller from "./seller/page";
 import Counter from "./counter/page";
 import Instagram from "./instagram/page";
-import ServicesGrid from "./Service/page";
+import ServicesGrid from "./service/page";
 import HeadsetFooter from "./footer/page";
 
 export default function HeadsetHomepage() {
