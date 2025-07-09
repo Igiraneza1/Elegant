@@ -1,4 +1,3 @@
-// components/ServicesGrid.tsx
 
 import React from 'react';
 import { FaShippingFast } from "react-icons/fa";
@@ -6,7 +5,6 @@ import { LiaMoneyBillSolid } from "react-icons/lia";
 import { GrSecure } from "react-icons/gr";
 import { IoCallOutline } from "react-icons/io5";
 
-// ✅ Correct function declaration
 export default function ServicesGrid() {
   const services = [
     {
