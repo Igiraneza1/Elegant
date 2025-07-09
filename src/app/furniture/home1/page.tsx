@@ -1,155 +1,15 @@
-"use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import Link from "next/link";
+import  Header from "./header/page";
+import  Intro from "./intro/page";
+import  Shop from "./shop/page";
+import  NewArrivals from "./newArrival/page";
+import  Discount from "./discount/page";
+import  Articles from "./article/page";
+import  NewsLetter from "./newsletter/page";
+import  Footer from "./footer/page";
 
-export default function Home1() {
-  const slides = [
-    {
-      image: "/image/furniture/sofa1.jpg",
-      title: "Modern Leather Sofa",
-      description: "Modern leather sofa with mint pillows.",
-      price: "89k",
-    },
-    {
-      image: "/image/furniture/chair1.png",
-      title: "Elegant chair",
-      description: "Elegant chair with a modern design.",
-      price: "89k",
-    },
-    {
-      image: "/image/furniture/livingroom.png",
-      title: "Mint Leather Sofa",
-      price: "89k",
-    },
-    {
-      image: "/image/furniture/kitchen.jpg",
-      title: "Kitchen Fabric",
-      price: "90k",
-    },
-    {
-      image: "/image/furniture/bedroom.png",
-      title: "Accent Room Cupboard",
-      price: "289k",
-    },
-    {
-      image: "/image/furniture/Loveseat sofa.png",
-      title: "Love Seat Sofa",
-      price: "200k",
-    },
-    {
-      image: "/image/furniture/Table lamp.png",
-      title: "Table Lamp",
-      price: "160k",
-    },
-    {
-      image: "/image/furniture/Beige table lamp.png",
-      title: "Beige Table Lamp",
-      price: "289k",
-    },
-    {
-      image: "/image/furniture/basket.png",
-      title: "Bamboo Basket",
-      price: "200k",
-    },
-    { image: "/image/furniture/Toasted.pgg", title: "Toaster", price: "140k" },
-    {
-      image: "/image/furniture/sofa2.jpg",
-      title: "Mint Leather Sofa",
-      description: "7 ways to decorate your home",
-      price: "89k",
-    },
-    {
-      image: "/image/furniture/kitchen.jpg",
-      title: "Elegant Kitchen Fabric",
-      description: "Kitchen organization",
-      price: "74k",
-    },
-    {
-      image: "/image/furniture/bedroom1.jpg",
-      title: "Sectional Bedroom",
-      description: "Decor your bedroom",
-      price: "99k",
-    },
-  ];
-
-  const newArrivals = [
-    {
-      image: "/image/furniture/Loveseat sofa.png",
-      title: "Loveseat",
-      price: "$71.00",
-      rating: 5,
-      originalPrice: "$99.00",
-      isNew: true,
-      discount: "50%",
-    },
-    {
-      image: "/image/furniture/Table lamp.png",
-      title: "Table Lamp",
-      price: "$24.00",
-      rating: 4,
-      originalPrice: "$48.00",
-      isNew: true,
-      discount: "50%",
-    },
-    {
-      image: "/image/furniture/Beige table lamp.png",
-      title: "Beige Table Lamp",
-      price: "$30.00",
-      rating: 4,
-      originalPrice: "$60.00",
-      isNew: true,
-      discount: "50%",
-    },
-    {
-      image: "/image/furniture/basket.png",
-      title: "Bamboo Basket",
-      price: "$12.00",
-      rating: 5,
-      originalPrice: "$24.00",
-      isNew: true,
-      discount: "50%",
-    },
-    {
-      image: "/image/furniture/Toasted.png",
-      title: "Toaster",
-      price: "$35.00",
-      rating: 4,
-      originalPrice: "$70.00",
-      isNew: true,
-      discount: "50%",
-    },
-  ];
-
-  const article = [
-    {
-      image: "/image/furniture/sofa2.jpg",
-      title: "7 ways to decor your home",
-      description: "",
-      price: "",
-    },
-    {
-      image: "/image/furniture/kitchen.jpg",
-      title: "Kitchen organisation",
-      description: "",
-      price: "",
-    },
-    {
-      image: "/image/furniture/bedroom1.jpg",
-      title: "Decor your bedroom",
-      description: "",
-      price: "",
-    },
-  ];
-
-  const [current, setCurrent] = useState(0);
-  const [showDescription, setShowDescription] = useState(false);
-
-  const prevSlide = () =>
-    setCurrent((current - 1 + slides.length) % slides.length);
-  const nextSlide = () => setCurrent((current + 1) % slides.length);
-
+export default function FurrnitureHomepage(){
   return (
+<<<<<<< HEAD
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
       <div className="w-full h-96 bg-gray-100 relative mx-5">      
@@ -516,3 +376,17 @@ export default function Home1() {
     </main>
   );
 }
+=======
+    <div className="bg-white">
+      <Header/>
+      <Intro/>
+      <Shop/>
+      <NewArrivals/>
+      <Discount/>
+      <Articles/>
+      <NewsLetter/>
+      <Footer/>
+    </div>
+  )
+}
+>>>>>>> 4249017822861471045ace3a4ca7c1c80cf00425
