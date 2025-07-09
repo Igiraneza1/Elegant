@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Headband",
+    "image": "/image/headset/headset11.png",
+    "link": "/collections/headband"
+  },
+  {
+    "title": "Earbuds",
+    "image": "/image/headset/headset6.jpg",
+    "link": "/collections/earbuds"
+  },
+  {
+    "title": "Accessories",
+    "image": "/image/headset/headset7.jpg",
+    "link": "/collections/accessories"
+  }
+]
