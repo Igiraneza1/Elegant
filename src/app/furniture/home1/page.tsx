@@ -6,10 +6,11 @@ import  Discount from "./discount/page";
 import  Articles from "./article/page";
 import  NewsLetter from "./newsletter/page";
 import  Footer from "./footer/page";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function FurrnitureHomepage(){
   return (
-<<<<<<< HEAD
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
       <div className="w-full h-96 bg-gray-100 relative mx-5">      
@@ -376,7 +377,7 @@ export default function FurrnitureHomepage(){
     </main>
   );
 }
-=======
+
     <div className="bg-white">
       <Header/>
       <Intro/>
@@ -387,6 +388,5 @@ export default function FurrnitureHomepage(){
       <NewsLetter/>
       <Footer/>
     </div>
-  )
-}
->>>>>>> 4249017822861471045ace3a4ca7c1c80cf00425
+  
+
