@@ -1,3 +1,6 @@
+"use client";
+import React, { useState } from "react";
+
 import  Header from "./header/page";
 import  Intro from "./intro/page";
 import  Shop from "./shop/page";
@@ -9,7 +12,69 @@ import  Footer from "./footer/page";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function FurrnitureHomepage(){
+
+export default function FurrnitureHomepage() {
+  // Example slide data
+  const slides = [
+    { image: "/image/furniture/slide1.jpg" },
+    { image: "/image/furniture/slide2.jpg" },
+    { image: "/image/furniture/slide3.jpg" },
+  ];
+  const [current, setCurrent] = useState(0);
+  const [showDescription, setShowDescription] = useState(false);
+
+  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+
+  // Example newArrivals data (replace with your actual data or import)
+  const newArrivals = [
+    {
+      image: "/image/furniture/new1.jpg",
+      title: "Modern Sofa",
+      price: "$499",
+      originalPrice: "$599",
+      rating: 4,
+      isNew: true,
+      discount: "20%",
+    },
+    {
+      image: "/image/furniture/new2.jpg",
+      title: "Wooden Chair",
+      price: "$199",
+      originalPrice: "$249",
+      rating: 5,
+      isNew: true,
+      discount: "15%",
+    },
+    {
+      image: "/image/furniture/new3.jpg",
+      title: "Dining Table",
+      price: "$799",
+      originalPrice: "$899",
+      rating: 3,
+      isNew: false,
+      discount: "10%",
+    },
+    {
+      image: "/image/furniture/new4.jpg",
+      title: "Bookshelf",
+      price: "$299",
+      originalPrice: "$349",
+      rating: 4,
+      isNew: false,
+      discount: "5%",
+    },
+    {
+      image: "/image/furniture/new5.jpg",
+      title: "Bed Frame",
+      price: "$699",
+      originalPrice: "$799",
+      rating: 5,
+      isNew: true,
+      discount: "12%",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white flex flex-col">
                                                                        
@@ -223,7 +288,20 @@ export default function FurrnitureHomepage(){
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {article.map((item, index) => (
+          {[
+            {
+              image: "/image/furniture/article1.jpg",
+              title: "How to Choose the Perfect Sofa",
+            },
+            {
+              image: "/image/furniture/article2.jpg",
+              title: "Top 10 Bedroom Decor Ideas",
+            },
+            {
+              image: "/image/furniture/article3.jpg",
+              title: "Modern Kitchen Trends 2024",
+            },
+          ].map((item, index) => (
             <article key={index} className="group cursor-pointer">
               <div className="mb-4">
                 <Image
