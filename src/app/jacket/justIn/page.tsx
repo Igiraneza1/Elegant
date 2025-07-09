@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-// Define TypeScript interface for product
+import products from "../../../../public/datajacket/arriaval.json";
+
 interface Product {
   id: number;
   image: string;
@@ -31,26 +32,13 @@ const StarIcon = ({
 };
 
 export default function AllProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    fetch("/datajacket/arrival.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error("Failed to load products:", err));
-  }, []);
-
-  if (products.length === 0) {
-    return <p className="text-center text-gray-500 mt-10">Loading products...</p>;
-  }
-
   return (
     <div className="w-full bg-white py-20 px-4 sm:px-8 md:px-15 lg:px-30">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 ml-6 text-gray-900">Just In</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {products.map((product) => (
+          {products.map((product: Product) => (
             <div key={product.id} className="group bg-white">
               <div className="relative h-64 w-full overflow-hidden">
                 <Image

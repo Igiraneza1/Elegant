@@ -26,7 +26,7 @@ export default function Collection() {
     <div className="max-w-7xl mx-auto">
       <div className="p-20 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 sm:px-8 md:px-15 lg:px-30">
         {collections.map((item) => (
-          <div key={item.id} className="relative group w-full h-[600px]">
+          <div key={item.id} className="relative group w-11/12 h-[500px]">
             <Image
               src={item.image}
               alt={item.name}
