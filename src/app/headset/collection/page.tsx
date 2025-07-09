@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import categories from "../../../../dataheadset/collection.json" // Adjust path as needed
+import categories from "../../../../public/dataheadset/collection.json" // Adjust path as needed
 
 export default function Shop() {
   return (

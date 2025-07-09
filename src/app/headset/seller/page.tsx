@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import headsets from "../../../../dataheadset/seller.json"; // adjust path as needed
+import headsets from "../../../../public/dataheadset/seller.json"; // adjust path as needed
 
 const StarRating = ({ rating }: { rating: number }) => {
   const totalStars = 5;

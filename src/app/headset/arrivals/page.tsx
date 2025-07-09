@@ -1,4 +1,4 @@
-import arrivalData from "../../../../dataheadset/arrival.json"; // adjust path as needed
+import arrivalData from "../../../../public/dataheadset/arrival.json"; // adjust path as needed
 import Image from "next/image";
 
 const getBadgeInfo = () => {
