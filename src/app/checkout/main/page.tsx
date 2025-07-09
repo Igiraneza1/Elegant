@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheck, FaTrash } from "react-icons/fa";
+import Image from "next/image"
 
 interface CartItem {
   id: number;
@@ -126,7 +127,7 @@ export default function Main() {
             {cartItems.map((item) => (
               <div key={item.id} className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
-                  <img src={item.image} alt={item.name} className="w-16 h-16 mr-4" />
+                  <Image src={item.image} alt={item.name} className="w-16 h-16 mr-4" />
                   <div>
                     {item.name}
                     <br />

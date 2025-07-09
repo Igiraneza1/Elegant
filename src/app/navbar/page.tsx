@@ -22,9 +22,11 @@ export default function Navbar() {
           <Link href="/">Elegant.</Link>
         </div>
 
-        
         <div className="hidden md:flex space-x-6 items-center relative">
-          <Link href="/" className="text-gray-600 hover:text-black transition-colors">
+          <Link
+            href="/"
+            className="text-gray-600 hover:text-black transition-colors"
+          >
             Home
           </Link>
 
@@ -37,8 +39,18 @@ export default function Navbar() {
               className="text-gray-600 hover:text-black transition-colors flex items-center gap-1"
             >
               Shop
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
 
@@ -67,8 +79,18 @@ export default function Navbar() {
               className="text-gray-600 hover:text-black transition-colors flex items-center gap-1"
             >
               Product
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
 
@@ -85,7 +107,6 @@ export default function Navbar() {
                       {cat}
                     </button>
 
-                    {/* Submenu for hovered category */}
                     {hoveredCategory === cat && (
                       <div
                         className="absolute top-0 left-full w-40 bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50"
@@ -109,21 +130,38 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/contact" className="text-gray-600 hover:text-black transition-colors">
+          <Link
+            href="/contact"
+            className="text-gray-600 hover:text-black transition-colors"
+          >
             Contact Us
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             {isMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
