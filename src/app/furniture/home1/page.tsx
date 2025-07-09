@@ -1,6 +1,3 @@
-"use client";
-
-
 import  Header from "./header/page";
 import  Intro from "./intro/page";
 import  Shop from "./shop/page";
@@ -9,13 +6,9 @@ import  Discount from "./discount/page";
 import  Articles from "./article/page";
 import  NewsLetter from "./newsletter/page";
 import  Footer from "./footer/page";
-import Image from "next/image";
-import Link from "next/link";
 
-
-export default function FurrnitureHomepage() {
-   return(
-
+export default function FurrnitureHomepage(){
+  return (
     <div className="bg-white">
       <Header/>
       <Intro/>
@@ -26,6 +19,5 @@ export default function FurrnitureHomepage() {
       <NewsLetter/>
       <Footer/>
     </div>
-   )
-  
+  )
 }

@@ -49,7 +49,7 @@ export default function Main() {
           className="opacity-50"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <div className="text-sm text-gray-400">Home <span className="mx-2">></span> Blog</div>
+          <div className="text-sm text-gray-400">Home <span className="mx-2"></span> Blog</div>
           <h1 className="text-4xl font-bold text-black">Our Blog</h1>
           <p className="text-lg text-black">Home ideas and design inspiration</p>
         </div>
