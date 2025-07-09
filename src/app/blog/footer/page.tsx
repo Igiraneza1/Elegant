@@ -1,4 +1,4 @@
-
+// components/Footer.tsx
 import React from "react";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -8,6 +8,7 @@ export default function Footer() {
     <footer className="text-white">
       <div className="w-full py-10 px-6 bg-black">
         <div className="max-w-7xl mx-auto space-y-8">
+          {/* Brand & Nav */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <p className="text-xl font-bold text-white">
@@ -38,7 +39,7 @@ export default function Footer() {
               <Link href="/terms">Terms of Use</Link>
             </div>
 
-
+            {/* Social Media Icons */}
             <ul className="flex gap-4 text-xl">
               <li>
                 <Link
