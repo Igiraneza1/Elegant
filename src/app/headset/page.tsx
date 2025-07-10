@@ -1,7 +1,7 @@
 
 import Intro from "./intro/page";
-import ProductSection from "./arrivals/page";
-import Shop from "./shop/page";
+import ProductGrid from "./arrivals/page";
+import Shop from "./collection/page";
 import Seller from "./seller/page";
 import Counter from "./counter/page";
 import Instagram from "./instagram/page";
@@ -12,7 +12,7 @@ export default function HeadsetHomepage() {
     return(
         <div>
             <Intro/>
-            <ProductSection/>
+            <ProductGrid/>
             <Shop/>
             <Seller/>
             <Counter/>

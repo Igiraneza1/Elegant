@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "image": "/image/headset/headset1.png",
+    "title": "Skullycandy-Crusher anc 2",
+    "category": "Wireless Headphones",
+    "price": "$299.99",
+    "description": "7.1 virtual surround sound, memory foam ear cushions, durable aluminum frame.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "image": "/image/headset/headset2.jpg",
+    "title": "Beats",
+    "category": "Studio Pro",
+    "price": "$349.99",
+    "description": "Wireless gaming headset with 24-hour battery life and ClearCast microphone.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "image": "/image/headset/headset5.png",
+    "title": "Sony - WH-CH720N Wireless",
+    "category": "Noise Canceling",
+    "price": "$149.99",
+    "description": "Lightweight design with powerful noise-canceling features.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "image": "/image/headset/headset3.png",
+    "title": "Skullcandy - Rail True Wireless",
+    "category": "Earbuds",
+    "price": "$129.99",
+    "description": "THX Spatial Audio, lightweight design, and noise-canceling mic.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "image": "/image/headset/headset4.png",
+    "title": "Beats",
+    "category": "Studio Pro",
+    "price": "$129.99",
+    "description": "Blue VOICE microphone tech, premium memory foam earpads, and pro-grade sound.",
+    "rating": 5
+  }
+]
+

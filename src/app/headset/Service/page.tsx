@@ -1,11 +1,11 @@
-// components/ServicesGrid.tsx
+
 import React from 'react';
 import { FaShippingFast } from "react-icons/fa";
 import { LiaMoneyBillSolid } from "react-icons/lia";
 import { GrSecure } from "react-icons/gr";
 import { IoCallOutline } from "react-icons/io5";
 
-const ServicesGrid = () => {
+export default function ServicesGrid() {
   const services = [
     {
       icon: FaShippingFast,
@@ -47,6 +47,4 @@ const ServicesGrid = () => {
       </div>
     </div>
   );
-};
-
-export default ServicesGrid;
+}

@@ -2,24 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-const categories = [
-  {
-    title: "Headband",
-    image: "/image/headset/headset11.png",
-    link: "/collections/headband",
-  },
-  {
-    title: "Earbuds",
-    image: "/image/headset/headset6.jpg",
-    link: "/collections/earbuds",
-  },
-  {
-    title: "Accessories",
-    image: "/image/headset/headset7.jpg",
-    link: "/collections/accessories",
-  },
-];
+import categories from "../../../../public/dataheadset/collection.json" // Adjust path as needed
 
 export default function Shop() {
   return (
@@ -52,7 +35,6 @@ export default function Shop() {
                 key={item.title}
                 className="relative bg-gray-100 p-6 rounded-lg flex items-center"
               >
-
                 <div className="mt-20">
                   <h3 className="text-xl font-semibold text-black">{item.title}</h3>
                   <Link
@@ -71,7 +53,6 @@ export default function Shop() {
                     className="object-contain"
                   />
                 </div>
-                
               </div>
             ))}
           </div>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "November Outfits",
+    "image": "/image/jacket/jacket10.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Cashmere Set",
+    "image": "/image/jacket/jacket11.jpg"
+  },
+  {
+    "id": 3,
+    "name": "The New Nordic",
+    "image": "/image/jacket/jacket12.jpg"
+  },
+  {
+    "id": 4,
+    "name": "The Leather",
+    "image": "/image/jacket/jacket13.jpg"
+  }
+]

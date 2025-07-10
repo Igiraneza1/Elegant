@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "image": "/image/jacket/jacket1.jpg",
+    "title": "96 Nuptse Dip Dye Korea Puffers",
+    "category": "Jacket",
+    "price": "$400.00",
+    "description": "A stylish dip-dye puffer jacket inspired by Korean streetwear, built to keep you warm in bold fashion.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "image": "/image/jacket/jacket2.jpg",
+    "title": "Paradigm Chilliwack Black Label",
+    "category": "Jacket",
+    "price": "$349.99",
+    "description": "Premium insulated jacket with classic bomber styling from the Black Label collection—ideal for cold weather.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "image": "/image/jacket/jacket3.jpg",
+    "title": "1996 Retro Nuptse",
+    "category": "Jacket in Black",
+    "price": "$149.99",
+    "description": "An iconic black retro puffer jacket with oversized baffles and packable hood, inspired by '90s design.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "image": "/image/jacket/jacket4.jpg",
+    "title": "Paul Quilted Nylon Puffer Bomber",
+    "category": "Jacket",
+    "price": "$300.00",
+    "description": "Modern puffer bomber jacket with quilted nylon exterior, offering both warmth and lightweight comfort.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "image": "/image/jacket/jacket5.jpg",
+    "title": "Chilliwack Jacket Bomber",
+    "category": "HUMANATURE",
+    "price": "$1,195",
+    "description": "A sustainable take on the classic Chilliwack bomber, designed under the HUMANATURE label for eco-conscious warmth.",
+    "rating": 5
+  }
+]
