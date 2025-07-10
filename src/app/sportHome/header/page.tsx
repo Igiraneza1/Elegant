@@ -1,13 +1,13 @@
 "use client";
-
+import React from "react";
 import { FaSearch, FaUser, FaShoppingBag } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Header() {
   return (
     <div className="bg-gray-50">
-    
-      <div className="bg-purple-100 text-purple-700 text-center py-2 text-sm">
+      {/* Promo bar */}
+      <div className="bg-green-400 text-gray-700 text-center py-2 text-sm">
         <span>30% off storewide - Limited time</span>
         <Link href="/shop" className="underline ml-2">Shop Now →</Link>
       </div>
