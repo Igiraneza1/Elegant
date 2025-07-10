@@ -1,5 +1,6 @@
 import React from 'react';
-import { Star, ShoppingCart, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Star, ShoppingCart} from 'lucide-react';
 
 // Types
 interface Product {
@@ -130,7 +131,7 @@ const collections: Collection[] = [
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
   <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
     <div className="relative">
-      <img 
+      <Image 
         src={product.image} 
         alt={product.name}
         className="w-full h-48 object-cover"
@@ -170,7 +171,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => (
   <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer">
     <div className="aspect-square">
-      <img 
+      <Image 
         src={category.image} 
         alt={category.name}
         className="w-full h-full object-cover"
@@ -185,7 +186,7 @@ const CategoryCard: React.FC<{ category: Category }> = ({ category }) => (
 const CollectionCard: React.FC<{ collection: Collection }> = ({ collection }) => (
   <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
     <div className="aspect-[3/2]">
-      <img 
+      <Image  
         src={collection.image} 
         alt={collection.name}
         className="w-full h-full object-cover"
