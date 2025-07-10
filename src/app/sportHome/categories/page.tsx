@@ -8,7 +8,7 @@ interface Category {
   image: string;
 }
 
-export default function Home() {
+export default function Category() {
   const categories: Category[] = [
     { id: 1, name: 'Golf Clubs', image: '/image/sport/golf-clubs.jpg' },
     { id: 2, name: 'Golf Balls', image: '/image/sport/golf-balls1.jpg' },

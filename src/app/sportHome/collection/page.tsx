@@ -8,19 +8,19 @@ interface Collection {
 
 export default function Collection() {
   const collections: Collection[] = [
-    { id: 1, name: 'Juniors Set', image: '/path-to-juniors-set-image.jpg' },
-    { id: 2, name: 'Men\'s Set', image: '/path-to-mens-set-image.jpg' },
-    { id: 3, name: 'Women\'s Set', image: '/path-to-womens-set-image.jpg' },
+    { id: 1, name: 'Juniors Set', image: '/image/sport/junior-set.png' },
+    { id: 2, name: 'Men\'s Set', image: '/image/sport/men-set.png' },
+    { id: 3, name: 'Women\'s Set', image: '/image/sport/women-set.png' },
   ];
 
   return (
-    <main className=" bg-white">
+    <main className=" bg-white max-w-6xl mx-auto text-black">
       <div className="container mx-auto px-4 py-8">
         <h2 className="text-2xl font-bold mb-8">Shop Collection</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* First card taking half width */}
+          
           <div className="col-span-1 bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="relative h-64">
+            <div className="relative h-128">
               <Image
                 src={collections[0].image}
                 alt={collections[0].name}
@@ -36,10 +36,10 @@ export default function Collection() {
               </a>
             </div>
           </div>
-          {/* Second and third cards sharing the other half */}
+          
           <div className="col-span-1 grid grid-cols-1 gap-6">
             <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative h-64">
+              <div className="relative h-48">
                 <Image
                   src={collections[1].image}
                   alt={collections[1].name}

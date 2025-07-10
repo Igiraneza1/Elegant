@@ -26,7 +26,7 @@ const articles: Article[] = [
 
 export default function Article () {
   return (
-    <div className="container mx-auto px-4 py-8 text-black bg-white">
+    <div className="container mx-auto px-4 py-8 text-black max-w-6xl bg-white">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">Latest Articles</h2>
         <a href="#" className="text-black hover:text-gray-700">

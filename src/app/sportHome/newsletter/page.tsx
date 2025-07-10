@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -41,12 +42,13 @@ export default function Newsletter() {
                 className="flex-1 bg-transparent border-0 border-b-2 border-gray-400 text-white placeholder-gray-400 py-3 focus:outline-none focus:border-white text-lg"
                 required
               />
-              <button
+              <Link
+                href={"/sign-up"}
                 type="submit"
                 className="ml-4 bg-transparent text-white px-6 py-2 text-lg hover:text-gray-300 transition duration-300 font-medium"
               >
                 Signup
-              </button>
+              </Link>
             </form>
           </div>
 
