@@ -94,235 +94,221 @@ export default function Shop3() {
   return (
     <div className="min-h-screen bg-white">
      
-      <header className="bg-white shadow p-4">
-              <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-gray-900">3legant.</h1>
-                <nav className="space-x-6">
-                  <Link href="/" className="text-gray-600 hover:text-gray-900">
-                    Home
-                  </Link>
-                  <Link href="/shop" className="text-gray-600 hover:text-gray-900">
-                    Shop
-                  </Link>
-                  <Link href="/contact" className="text-gray-600 hover:text-gray-900">
-                    Contact Us
-                  </Link>
-                </nav>
-                <div className="space-x-4">
-                  <span>🔍</span>
-                  <span>🔔</span>
-                  <span>👤</span>
-                </div>
-              </div>
-            </header>
-      
-            
-            <div className="bg-purple-100 text-purple-700 text-center py-2 mb-4">
-              <span>30% off storewide - Limited time</span>
-              <Link href="/shop" className="underline ml-2">Shop Now →</Link>
-            </div>
-            <div className="relative h-86 bg-gray-300 mb-6">
-              <Image
-                src="/image/furniture/sofa4.jpg"
-                alt="Shop Hero"
-                fill
-                className="object-cover opacity-50"
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-gray-900 gap-6">
-                <div className=' flex flex-row space-x-5 items-center'>
-                 <p className="text-sm  gap-6">Home  </p> 
-                 <p>/</p>
-                 < p>   Shop</p>
-                </div>
-                <p className="text-5xl font-bold"> Shop Page</p>
-                <h2 className="text-2xl  mt-2 text-gray-700">
-                  Let is design the place you always imagined
-                </h2>
-              </div>
-            </div>
-    <section className="bg-white mx-auto max-w-7xl p-4 md:p-6">
-      
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
-          <select
-            className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white w-full sm:w-auto"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="Living Room">CATEGORIES</option>
-            <option value="All">All Categories</option>
-            <option value="Living Room">Living Room</option>
-          </select>
-          <select
-            className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white w-full sm:w-auto"
-            value={priceFilter}
-            onChange={(e) => setPriceFilter(e.target.value)}
-          >
-            <option value="All Price">PRICE</option>
-            <option value="All Price">All Price</option>
-            <option value="Under $50">Under $50</option>
-          </select>
-        </div>
-        <div className="flex items-center space-x-2 md:space-x-4 w-full md:w-auto justify-between">
-          <select
-            className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white flex-1 md:flex-none"
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-          >
-            <option value="">Sort by</option>
-            <option value="Price Low to High">Price Low to High</option>
-            <option value="Price High to Low">Price High to Low</option>
-          </select>
-          <div className="hidden md:flex space-x-2">
-            <button className="p-2 border border-gray-300 rounded">
-              <div className="grid grid-cols-2 gap-1">
-                <div className="w-2 h-2 bg-gray-400"></div>
-                <div className="w-2 h-2 bg-gray-400"></div>
-                <div className="w-2 h-2 bg-gray-400"></div>
-                <div className="w-2 h-2 bg-gray-400"></div>
-              </div>
-            </button>
-            <button className="p-2 border border-gray-300 rounded">
-              <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-gray-400"></div>
-                <div className="w-2 h-2 bg-gray-400"></div>
-                <div className="w-2 h-2 bg-gray-400"></div>
-              </div>
-            </button>
-            <button className="p-2 border border-gray-300 rounded">
-              <div className="flex flex-col space-y-1">
-                <div className="w-6 h-1 bg-gray-400"></div>
-                <div className="w-6 h-1 bg-gray-400"></div>
-                <div className="w-6 h-1 bg-gray-400"></div>
-              </div>
-            </button>
-          </div>
+
+      <div className="relative h-86 bg-gray-300 mb-6">
+        <Image
+          src="/image/furniture/sofa4.jpg"
+          alt="Shop Hero"
+          fill
+          className="object-cover opacity-50"
+          priority
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-gray-900 gap-6">
+          {/* <div className="flex flex-row space-x-5 items-center text-sm font-medium text-gray-700">
+            <p>Home</p>
+            <span>/</span>
+            <p>Shop</p>
+          </div> */}
+          <p className="text-5xl font-bold">Shop Page</p>
+          <h2 className="text-2xl mt-2 text-gray-700">
+            Let us design the place you always imagined
+          </h2>
         </div>
       </div>
 
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-        {filteredProducts.map((product) => (
-          <div key={product.id} className="p-1 md:p-2  ">
-            <div className="flex flex-col sm:flex-row gap-4">
-              {/* Image container */}
-              <div className="sm:w-70 w-full h-76 relative flex-shrink-0">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-auto object-contain"
-                />
-                {product.id === 1 && (
-                  <div className="absolute top-2 left-2 flex flex-col space-y-1 z-10">
-                    <span className="bg-white text-black px-2 py-1 text-xs font-medium rounded">
+      {/* Filters and Sorting */}
+      <section className="bg-white mx-auto max-w-7xl p-4 md:p-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
+            <select
+              className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white w-full sm:w-auto"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="Living Room">CATEGORIES</option>
+              <option value="All">All Categories</option>
+              <option value="Living Room">Living Room</option>
+            </select>
+            <select
+              className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white w-full sm:w-auto"
+              value={priceFilter}
+              onChange={(e) => setPriceFilter(e.target.value)}
+            >
+              <option value="All Price">PRICE</option>
+              <option value="All Price">All Price</option>
+              <option value="Under $50">Under $50</option>
+            </select>
+          </div>
+          <div className="flex items-center space-x-2 md:space-x-4 w-full md:w-auto justify-between">
+            <select
+              className="border border-gray-300 p-2 rounded text-sm text-gray-600 bg-white flex-1 md:flex-none"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              <option value="">Sort by</option>
+              <option value="Price Low to High">Price Low to High</option>
+              <option value="Price High to Low">Price High to Low</option>
+            </select>
+            {/* View toggle buttons */}
+            <div className="hidden md:flex space-x-2">
+              <button className="p-2 border border-gray-300 rounded" aria-label="Grid view">
+                <div className="grid grid-cols-2 gap-1">
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                </div>
+              </button>
+              <button className="p-2 border border-gray-300 rounded" aria-label="List view">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                  <div className="w-2 h-2 bg-gray-400"></div>
+                </div>
+              </button>
+              <button className="p-2 border border-gray-300 rounded" aria-label="Menu view">
+                <div className="flex flex-col space-y-1">
+                  <div className="w-6 h-1 bg-gray-400"></div>
+                  <div className="w-6 h-1 bg-gray-400"></div>
+                  <div className="w-6 h-1 bg-gray-400"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+          {filteredProducts.map((product) => (
+            <div key={product.id} className="p-1 md:p-2 border rounded shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Image container */}
+                <div className="sm:w-72 w-full h-76 relative flex-shrink-0">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 288px"
+                    className="object-contain"
+                    priority={product.id === 1}
+                  />
+                  {/* Labels */}
+                  {product.new && (
+                    <span className="absolute top-2 left-2 bg-white text-black px-2 py-1 text-xs font-medium rounded z-10">
                       NEW
                     </span>
-                    <span className="bg-green-500 text-white px-2 py-1 text-xs font-medium rounded">
-                      -50%
+                  )}
+                  {product.discount && (
+                    <span className="absolute top-10 left-2 bg-green-500 text-white px-2 py-1 text-xs font-medium rounded z-10">
+                      -{product.discount}%
                     </span>
-                  </div>
-                )}
-              </div>
-
-          
-              <div className="flex flex-col justify-between flex-1">
-                <div>
-                  <p className="flex text-black text-sm">{'★'.repeat(product.rating)}</p>
-                  <h3 className="text-lg font-semibold text-black mb-1">{product.name}</h3>
-                  <p className="text-lg font-bold text-black mb-3">
-                    ${product.price.toFixed(2)}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                    {product.description}
-                  </p>
-                   <button className="bg-black text-white px-4 py-2 rounded text-sm font-medium w-full mb-3 hover:bg-gray-800">
-                    Add to cart
-                  </button>
-                  <button className="text-gray-600 px-4 py-2 rounded text-sm font-medium w-full mb-3 hover:text-gray-800">
-                  <span>♡</span>
-                    <span>Wishlist</span>
-                  </button>
+                  )}
                 </div>
-                
+
+                {/* Product details */}
+                <div className="flex flex-col justify-between flex-1">
+                  <div>
+                    <p className="text-black text-sm mb-1" aria-label={`${product.rating} star rating`}>
+                      {'★'.repeat(product.rating)}
+                    </p>
+                    <h3 className="text-lg font-semibold text-black mb-1">{product.name}</h3>
+                    <p className="text-lg font-bold text-black mb-3">${product.price.toFixed(2)}</p>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-3">{product.description}</p>
+                    <button className="bg-black text-white px-4 py-2 rounded text-sm font-medium w-full mb-3 hover:bg-gray-800 transition-colors">
+                      Add to cart
+                    </button>
+                    <button className="text-gray-600 px-4 py-2 rounded text-sm font-medium w-full mb-3 hover:text-gray-800 transition-colors flex items-center justify-center space-x-2">
+                      <span>♡</span>
+                      <span>Wishlist</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      
-      <div className="text-center mt-8">
-        <button className="border border-gray-300 text-gray-800 px-8 py-3 rounded text-sm font-medium hover:bg-gray-50">
-          Show more
-        </button>
-      </div>
-    </section>
-        <section className="relative h-72 flex items-center justify-center bg-gray-100">
-      <div className="absolute left-0 h-full w-1/3">
-        <Image
-          src="/image/furniture/bedroom.png"
-          alt="dresser"
-          fill
-          className="object-cover"
-        />
-      </div>
-      
-      <div className="relative z-10 flex flex-col items-center justify-center text-center w-full  rounded-lg py-8 mx-4">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-2">
-          Join Our Newsletter
-        </h2>
-        <p className="text-gray-700 mb-6 text-lg">
-          Sign up for deals, new products and promotions
-        </p>
-        <div className="flex items-center border-b border-gray-800 w-full max-w-md">
-          <input
-            type="email"
-            placeholder="Email address"
-            className="flex-1 bg-transparent outline-none text-gray-900 placeholder-gray-600 text-sm py-2 px-1"
-          />
-          <button className="ml-4 text-sm font-medium text-gray-900 cursor-pointer hover:text-gray-600 transition-colors">
-            Signup
+        {/* Show more button */}
+        <div className="text-center mt-8">
+          <button className="border border-gray-300 text-gray-800 px-8 py-3 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+            Show more
           </button>
         </div>
-      </div>
-    
-      <div className="absolute right-0 h-full w-1/3">
-        <Image
-          src="/image/furniture/chair1.png"
-          alt="chair"
-          fill
-          className="object-cover"
-        />
-      </div>
-    </section>
-    
-      <div className="w-full py-10 px-6 bg-black">
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="relative h-72 flex items-center justify-center bg-gray-100">
+        <div className="absolute left-0 h-full w-1/3">
+          <Image
+            src="/image/furniture/bedroom.png"
+            alt="dresser"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center justify-center text-center w-full rounded-lg py-8 mx-4">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-2">Join Our Newsletter</h2>
+          <p className="text-gray-700 mb-6 text-lg">
+            Sign up for deals, new products and promotions
+          </p>
+          <div className="flex items-center border-b border-gray-800 w-full max-w-md">
+            <input
+              type="email"
+              placeholder="Email address"
+              className="flex-1 bg-transparent outline-none text-gray-900 placeholder-gray-600 text-sm py-2 px-1"
+            />
+            <button className="ml-4 text-sm font-medium text-gray-900 cursor-pointer hover:text-gray-600 transition-colors">
+              Signup
+            </button>
+          </div>
+        </div>
+
+        <div className="absolute right-0 h-full w-1/3">
+          <Image
+            src="/image/furniture/chair1.png"
+            alt="chair"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full py-10 px-6 bg-black">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Brand & Nav */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <p className="text-xl font-bold text-white">
                 Elegant.
-                <span className="text-gray-400 text-sm font-light">
-                  {" "} | Headphone Store
-                </span>
+                <span className="text-gray-400 text-sm font-light"> | Headphone Store</span>
               </p>
             </div>
 
             <nav>
               <ul className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium text-gray-400">
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/shop">Shop</Link></li>
-                <li><Link href="/product">Product</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/shop">Shop</Link>
+                </li>
+                <li>
+                  <Link href="/product">Product</Link>
+                </li>
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact Us</Link>
+                </li>
               </ul>
             </nav>
           </div>
 
           <div className="border-t border-gray-700"></div>
 
-          
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
               <p>&copy; 2023 Elegant. All rights reserved.</p>
@@ -332,23 +318,24 @@ export default function Shop3() {
 
             <ul className="flex gap-4">
               <li>
-                <Link href="https://www.facebook.com/" target="_blank" className="hover:text-blue-400">Facebook</Link>
+                <Link href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                  Facebook
+                </Link>
               </li>
               <li>
-                <Link href="https://www.instagram.com/" target="_blank" className="hover:text-pink-400">Instagram</Link>
+                <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
+                  Instagram
+                </Link>
               </li>
               <li>
-                <Link href="https://www.twitter.com/" target="_blank" className="hover:text-blue-300">Twitter</Link>
+                <Link href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300">
+                  Twitter
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-    
-</div>
-
-
-
-     
+      </footer>
+    </div>
   );
 }

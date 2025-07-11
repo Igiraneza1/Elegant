@@ -50,9 +50,13 @@ export default function SignIn() {
           router.push("/home");
         }
       }, 1500);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Login error:", err);
-      setMessage({ type: "error", text: err.message || "Something went wrong. Please try again later." });
+      let errorMessage = "Something went wrong. Please try again later.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+      setMessage({ type: "error", text: errorMessage });
     } finally {
       setLoading(false);
     }
