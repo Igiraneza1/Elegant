@@ -43,7 +43,6 @@ export default function SignIn() {
 
       setMessage({ type: "success", text: "Login successful! Redirecting..." });
 
-      // Simulate delay for UX
       setTimeout(() => {
         if (data.role === "admin") {
           router.push("/dashboard");

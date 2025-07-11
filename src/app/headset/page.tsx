@@ -5,7 +5,7 @@ import Shop from "./collection/page";
 import Seller from "./seller/page";
 import Counter from "./counter/page";
 import Instagram from "./instagram/page";
-import ServicesGrid from "./service/page";
+import ServicesGrid from "./services/page";
 import HeadsetFooter from "./footer/page";
 
 export default function HeadsetHomepage() {
