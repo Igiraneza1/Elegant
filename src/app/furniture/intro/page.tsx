@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -108,9 +108,11 @@ export default function Intro() {
             Simply Unique / <br className="hidden sm:block" /> Simply Better.
           </h1>
           <p className="text-sm text-gray-600 text-center sm:text-left">
-            <strong className="text-black">3legant</strong> is a gift & decorations store based in HCMC,
+            <strong className="text-black">Elegant</strong> is your go-to online
+            store for beautiful gifts and decorations.{" "}
             <br className="hidden sm:block" />
-            Vietnam. Est since 2019.
+            We’re here to help you celebrate every special moment with style and
+            charm!
           </p>
         </div>
       </main>

@@ -9,7 +9,7 @@ export default function Shop() {
             <h3 className="text-xl font-semibold mb-2 text-gray-800">
               Living Room
             </h3>
-            <a href="#" className="text-sm text-gray-900 underline">
+            <a href="/shop/furniture" className="text-sm text-gray-900 underline">
               Shop Now →
             </a>
           </div>
@@ -32,10 +32,10 @@ export default function Shop() {
               className="object-contain"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-end p-6 b">
-              <h3 className="text-xl font-semibold text-black font-semibold">
+              <h3 className="text-xl text-black font-semibold">
                 Bedroom
               </h3>
-              <a href="#" className="text-sm text-gray-600 underline">
+              <a href="/shop/furniture" className="text-sm text-gray-600 underline">
                 Shop Now →
               </a>
             </div>
@@ -49,10 +49,10 @@ export default function Shop() {
               className="object-contain"
             />
             <div className="absolute inset-0 flex flex-col items-start justify-end p-6 ">
-              <h3 className="text-xl font-semibold text-black font-semibold">
+              <h3 className="text-xl text-black font-semibold">
                 Kitchen
               </h3>
-              <a href="#" className="text-sm text-gray-600 underline">
+              <a href="/shop/furniture" className="text-sm text-gray-600 underline">
                 Shop Now →
               </a>
             </div>

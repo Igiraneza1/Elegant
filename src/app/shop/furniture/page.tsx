@@ -136,7 +136,7 @@ export default function Shop3() {
                 </div>
                 <p className="text-5xl font-bold"> Shop Page</p>
                 <h2 className="text-2xl  mt-2 text-gray-700">
-                  Let's design the place you always imagined
+                  Let is design the place you always imagined
                 </h2>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function Shop3() {
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Image container */}
               <div className="sm:w-70 w-full h-76 relative flex-shrink-0">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
                   className="w-full h-auto object-contain"
