@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import NewArrival from "../../../../../public/dataheadset/arrival.json";
 
 interface Product {
@@ -16,6 +17,21 @@ interface Product {
 
 const ProductShowcase = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      router.push("/sign-up");
+      return;
+    }
+    alert("Product added to cart!");
+  };
 
   return (
     <div className="p-6 space-y-12">
@@ -59,7 +75,11 @@ const ProductShowcase = () => {
             </p>
             <p className="mt-2 text-sm text-gray-700">{selectedProduct.description}</p>
             <p className="mt-1 text-black">{"★".repeat(selectedProduct.rating)}</p>
-            <button className="mt-4 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+
+            <button
+              onClick={handleAddToCart}
+              className="mt-4 w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+            >
               Add to Cart
             </button>
           </div>
@@ -88,7 +108,6 @@ const ProductShowcase = () => {
                   height={150}
                   className="rounded-t-xl w-full h-[150px] object-cover"
                 />
-                
                 <span className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
                   -50%
                 </span>
@@ -99,7 +118,7 @@ const ProductShowcase = () => {
               <div className="p-3">
                 <p className="text-sm font-semibold">{item.title}</p>
                 <p className="text-sm text-gray-500">{item.category}</p>
-                <div className="text-bllack text-xs mt-1">
+                <div className="text-black text-xs mt-1">
                   {"★".repeat(item.rating)}
                 </div>
                 <p className="text-sm font-bold mt-1">{item.price}</p>
@@ -107,6 +126,7 @@ const ProductShowcase = () => {
             </div>
           ))}
         </div>
+
         <div className="mt-6 border-t w-full"></div>
       </div>
     </div>

@@ -1,16 +1,68 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import chair from "../../../public/image/chair1.jpg"
-
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import chair from "../../../public/image/chair1.jpg";
 
 export default function SignIn() {
+  const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState<{ type: "error" | "success"; text: string } | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage(null);
+
+    if (!email || !password) {
+      setMessage({ type: "error", text: "Please enter both email and password." });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("https://elegant-be.onrender.com/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.message || "Invalid credentials.");
+      }
+
+      const data = await res.json();
+
+      setMessage({ type: "success", text: "Login successful! Redirecting..." });
+
+      // Simulate delay for UX
+      setTimeout(() => {
+        if (data.role === "admin") {
+          router.push("/dashboard");
+        } else {
+          router.push("/home");
+        }
+      }, 1500);
+    } catch (err: any) {
+      console.error("Login error:", err);
+      setMessage({ type: "error", text: err.message || "Something went wrong. Please try again later." });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="grid items-center justify-center bg-gray-200 h-screen"> 
-      <div className="bg-white p-6  md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6 rounded ">
-        <div className="flex items-center justify-center ">
+    <div className="grid items-center justify-center bg-gray-200 h-screen">
+      <div className="bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-6 rounded shadow-md">
+        <div className="flex items-center justify-center">
           <Image
             src={chair}
             alt="Chair"
@@ -29,16 +81,28 @@ export default function SignIn() {
             </Link>
           </p>
 
-          <form className="mt-4">
+          {message && (
+            <div
+              className={`mb-4 font-medium text-center ${
+                message.type === "error" ? "text-red-500" : "text-green-600"
+              }`}
+            >
+              {message.text}
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="mt-4">
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700 mb-2">
-                Username or Email
+                Email
               </label>
               <input
                 type="text"
                 id="email"
-                placeholder="Your username or email address"
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                className="w-full px-3 py-2 rounded border border-gray-300"
               />
             </div>
 
@@ -49,8 +113,10 @@ export default function SignIn() {
               <input
                 type="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Your password"
-                className="w-full px-3 py-2 p-2 rounded outline-none focus:outline-none border border-gray-300"
+                className="w-full px-3 py-2 rounded border border-gray-300"
               />
             </div>
 
@@ -66,9 +132,10 @@ export default function SignIn() {
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 px-4 rounded-md focus:outline-none hover:bg-gray-800 transition"
+              className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition"
+              disabled={loading}
             >
-              Sign In
+              {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
         </div>

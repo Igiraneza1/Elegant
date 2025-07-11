@@ -5,7 +5,7 @@ import Link from "next/link";
 const categories = ["furniture", "headset", "sport", "jacket"];
 const subLinks = [
   { name: "New Arrivals", slug: "newArrivals" },
-  { name: "Best Seller", slug: "best-seller" },
+  { name: "Best Seller", slug: "bestSeller" },
   { name: "Collection", slug: "collection" },
 ];
 
