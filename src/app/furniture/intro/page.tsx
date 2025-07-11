@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react";
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Intro() {
-
-    const [current, setCurrent] = useState(0);
-     const slides = [
+  const [current, setCurrent] = useState(0);
+  const slides = [
     {
       image: "/image/furniture/sofa1.jpg",
       title: "Modern Leather Sofa",
@@ -75,40 +74,46 @@ export default function Intro() {
     },
   ];
 
-   const prevSlide = () =>
+  const prevSlide = () =>
     setCurrent((current - 1 + slides.length) % slides.length);
   const nextSlide = () => setCurrent((current + 1) % slides.length);
+
   return (
-    <div className="">
-      
-    
-      <main className="flex flex-col items-center py-10 w-full t-4">
+    <div className="w-full px-4 sm:px-6 md:px-8 bg-white">
+      <main className="flex flex-col items-center py-10 w-full">
         <div className="relative w-full max-w-4xl">
           <Image
-            
-         src={slides[current].image}
-         alt={`Slide ${current + 1}`}
-
+            src={slides[current].image}
+            alt={`Slide ${current + 1}`}
             width={1000}
             height={400}
-            className="object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-110 w-full"
-
+            className="object-cover cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-[250px] sm:h-[350px] md:h-[400px] w-full"
           />
-          <button onClick={prevSlide} className="absolute left-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2  p-2 text-black ">←</button>     
-          <button onClick={nextSlide} className="absolute right-0 top-1/2 transform bg-white rounded-full m-5 -translate-y-1/2 p-2 text-black">→</button>     
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 text-black shadow-md"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 text-black shadow-md"
+          >
+            →
+          </button>
         </div>
-        <div className="flex space-x-75 justify-between mt-6  text-black">
-          <h1 className="text-4xl font-bold">
-            Simply Unique / <br /> Simply Better.
+
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mt-6 text-black w-full max-w-4xl">
+          <h1 className="text-2xl sm:text-4xl font-bold text-center sm:text-left">
+            Simply Unique / <br className="hidden sm:block" /> Simply Better.
           </h1>
-          <p className=" mt-2 text-sm text-gray-600">
-            <strong className="text-black">3legant</strong> is a gift & decorations store based in HCMC,<br/>
-             Vietnam. Est since 2019.
-             
+          <p className="text-sm text-gray-600 text-center sm:text-left">
+            <strong className="text-black">3legant</strong> is a gift & decorations store based in HCMC,
+            <br className="hidden sm:block" />
+            Vietnam. Est since 2019.
           </p>
         </div>
       </main>
-
     </div>
   );
 }

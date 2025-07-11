@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Shop() {
   return (
-    <div className="h-86 max-w-5xl bg-white mx-auto p-4 ">
+    <div className=" max-w-5xl bg-white mx-auto p-4 ">
       <main className="flex flex-wrap md:flex-nowrap max-w-6xl w-full gap-6">
         <div className="w-full md:w-1/2 flex flex-col bg-gray-100 rounded-lg shadow overflow-hidden">
           <div className="p-6 bg-gray-100 text-left">

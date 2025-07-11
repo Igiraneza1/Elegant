@@ -31,7 +31,7 @@ import Link from 'next/link';
 export default function Articles() {
   return (
     <main className='bg-white'>
-    <div className="container mx-auto px-4 py-8 ">
+    <div className="container max-w-5xl mx-auto px-4 py-8 ">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-black">Articles</h2>
         <Link href="/more-articles" className=" text-black text-lg underline">

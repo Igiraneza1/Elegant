@@ -6,11 +6,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div className="bg-gray-50">
-    
-      <div className="bg-purple-100 text-purple-700 text-center py-2 text-sm">
-        <span>30% off storewide - Limited time</span>
-        <Link href="/shop" className="underline ml-2">Shop Now →</Link>
-      </div>
+
 
       <header className="flex justify-between items-center px-6 py-3 bg-white shadow">
       
